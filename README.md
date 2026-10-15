@@ -1,4 +1,4 @@
-# RCE experimental dataset — version 0.2.0
+# RCE experimental dataset — version 0.2.1
 
 
 
@@ -90,18 +90,17 @@ Variable meanings and units: `docs/data_dictionary.csv`. New to the device? Star
 - Timestamps: `ts_local` is Europe/Madrid local time as recorded; `ts_utc` is derived.
 
 ## Citation
-See `CITATION.cff`. DOI: [https://doi.org/10.5281/zenodo.23386247](https://doi.org/10.5281/zenodo.23386247).
+See `CITATION.cff`. DOI: [https://doi.org/10.5281/zenodo.23398277](https://doi.org/10.5281/zenodo.23398277).
 
 ## Authors
-Vitor da Silva, Albert Castell, Roger Vila, Cristian Solé, Josep Lluís Lérida, Marc Medrano, Fernando Guirado,
-Ingrid Martorell — SEMBAC, University of Lleida, Spain.
-Data collection 2019–2020 campaigns: B. D. Mselle, M. R. Haddouche.
+Vitor da Silva, Albert Castell, Roger Vila, Boniface Dominick Mselle, Cristian Solé, Josep Lluís Lérida, Marc Medrano,
+Fernando Guirado, Ingrid Martorell — SEMBAC, University of Lleida, Spain.
 
 ## Licence
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). See `LICENSE`.
 
 ## Funding
-This work has been granted by the Ministerio de Ciencia, Innovación y Universidades (MICIU) AEI/10.13039/501100011033 under contract PID2023-146193OB-I00. This work is also part of the grant TED2021-131446B-I00, funded by MCIN/AEI/10.13039/501100011033 and by the European Union NextGenerationEU/PRTR.
+This work has been granted by the Ministerio de Ciencia, Innovación y Universidades (MICIU) AEI/10.13039/501100011033 under contract PID2023-146193OB-I00. This work is also part of the grant TED2021-131446B-I00, funded by MCIN/AEI/10.13039/501100011033 and by the European Union NextGenerationEU/PRTR. The authors would like to thank the Generalitat de Catalunya for the project awarded to their research group (2021 SGR 01370).
 
 ## Contact
 Vitor da Silva — vitor.dasilva@udl.cat

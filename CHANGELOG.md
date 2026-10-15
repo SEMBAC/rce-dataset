@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+- Acknowledgements: Generalitat de Catalunya, consolidated research group 2021 SGR 01370; full title of TED2021-131446B-I00
+  (BOOST-RCE) in the funding metadata.
+- Authors: Boniface Dominick Mselle added (data collection of the 2019–2020 campaigns).
+- Data, flags and documentation otherwise unchanged from 0.2.0.
+
 ## 0.2.0
 Corrections after an independent audit of the first build (0.1.0 was withdrawn).
 - Office files in `raw/`: personal and machine metadata removed from every part (path of the author's computer,

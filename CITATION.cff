@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: If you use this dataset, please cite it as below.
 title: "RCE experimental dataset: a Radiative Collector and Emitter for combined solar heating and radiative cooling, Lleida (Spain), 2019-2025"
-version: 0.2.0
+version: 0.2.1
 type: dataset
 license: CC-BY-4.0
-doi: "10.5281/zenodo.23386247"
+doi: "10.5281/zenodo.23398277"
 repository: "https://github.com/SEMBAC/rce-dataset"
 authors:
   - family-names: "da Silva"
@@ -18,6 +18,10 @@ authors:
   - family-names: "Vila"
     given-names: "Roger"
     orcid: "https://orcid.org/0000-0001-6705-8547"
+    affiliation: "SEMBAC, University of Lleida, Spain"
+  - family-names: "Mselle"
+    given-names: "Boniface Dominick"
+    orcid: "https://orcid.org/0000-0002-0640-8088"
     affiliation: "SEMBAC, University of Lleida, Spain"
   - family-names: "Solé"
     given-names: "Cristian"
