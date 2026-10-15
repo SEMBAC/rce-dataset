@@ -1,0 +1,11 @@
+start,end,event,affects,severity,source
+2023-06-01,2023-06-01,Rain alarm triggered but the system did not stop,control,event,diary
+2023-07-09,2023-07-13,Water circulation problems; the diary states that the daytime data of 2023-07-11 are not usable for analysis,all,unreliable,diary
+2023-07-20,2023-07-20,Power cut (logging gap),all,event,diary
+2023-10-23,2023-10-23,Valves and parameters being changed while starting the electric heater; values may be meaningless,all,unreliable,diary
+2024-01-01,2024-02-05,The diary states that the system was not working properly until 2024-02-05 (start of the period not stated),all,unreliable,diary
+2024-02-05,2024-02-05,Cold tank temperature (T9) stayed constant although the heater was on,t_cold_tank_c,event,diary
+2024-02-14,2024-02-14,Power cut (logging gap),all,event,diary
+2024-02-21,2024-02-21,Power cut (logging gap),all,event,diary
+2024-04-30,2024-04-30,Probe T7 reads 0 C / probe error,t_circuit_7_c,event,diary
+2024-05-13,2024-05-13,Probe T7 error,t_circuit_7_c,event,diary

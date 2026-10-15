@@ -1,0 +1,1894 @@
+{
+ "profile": "data-package",
+ "name": "rce-dataset",
+ "title": "RCE experimental dataset: a Radiative Collector and Emitter for combined solar heating and radiative cooling, Lleida (Spain), 2019-2025",
+ "version": "0.2.0",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "Creative Commons Attribution 4.0"
+  }
+ ],
+ "contributors": [
+  {
+   "title": "Vitor da Silva",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Albert Castell",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Roger Vila",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Cristian Solé",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Josep Lluís Lérida",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Marc Medrano",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Fernando Guirado",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  },
+  {
+   "title": "Ingrid Martorell",
+   "role": "author",
+   "organization": "SEMBAC, University of Lleida, Spain"
+  }
+ ],
+ "keywords": [
+  "radiative cooling",
+  "solar thermal",
+  "building energy",
+  "experimental data",
+  "digital twin",
+  "predictive control",
+  "time series"
+ ],
+ "resources": [
+  {
+   "name": "harmonized-2019",
+   "path": "harmonized/rce_2019.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "ts_local",
+      "type": "datetime"
+     },
+     {
+      "name": "ts_utc",
+      "type": "datetime"
+     },
+     {
+      "name": "system",
+      "type": "string"
+     },
+     {
+      "name": "n_samples",
+      "type": "integer"
+     },
+     {
+      "name": "n_tanks",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'tanks' group"
+     },
+     {
+      "name": "n_circuit",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'circuit' group"
+     },
+     {
+      "name": "n_surface",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'surface' group"
+     },
+     {
+      "name": "n_flow",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'flow' group"
+     },
+     {
+      "name": "n_pressure",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'pressure' group"
+     },
+     {
+      "name": "n_ambient",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ambient' group"
+     },
+     {
+      "name": "n_solar",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'solar' group"
+     },
+     {
+      "name": "n_ir",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ir' group"
+     },
+     {
+      "name": "t_hot_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Hot storage tank temperature (DHW tank, 150 L)"
+     },
+     {
+      "name": "t_cold_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold storage tank temperature (50 L)"
+     },
+     {
+      "name": "t_cold_tank_l1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 1 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 2 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 3 (height pending)"
+     },
+     {
+      "name": "t_surface_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 1 of 6 (position pending)"
+     },
+     {
+      "name": "t_surface_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 2 of 6"
+     },
+     {
+      "name": "t_surface_3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+     },
+     {
+      "name": "t_surface_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 4 of 6"
+     },
+     {
+      "name": "t_surface_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 5 of 6"
+     },
+     {
+      "name": "t_surface_6_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 6 of 6"
+     },
+     {
+      "name": "t_circuit_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)"
+     },
+     {
+      "name": "t_circuit_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
+     },
+     {
+      "name": "t_rc_inlet_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+     },
+     {
+      "name": "t_circuit_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T4 (location pending)"
+     },
+     {
+      "name": "t_circuit_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T5 (location pending)"
+     },
+     {
+      "name": "t_circuit_7_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)"
+     },
+     {
+      "name": "t_circuit_8_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T8 (location pending)"
+     },
+     {
+      "name": "t_circuit_10_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T10 (location pending)"
+     },
+     {
+      "name": "t_circuit_11_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T11 (location pending)"
+     },
+     {
+      "name": "t_aux_tank_22_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T22 (demand emulation; pending)"
+     },
+     {
+      "name": "t_aux_tank_23_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T23 (pending)"
+     },
+     {
+      "name": "t_aux_tank_24_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T24 (pending)"
+     },
+     {
+      "name": "flow_rce_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow through the RCE (loop 1)"
+     },
+     {
+      "name": "flow_collector_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+     },
+     {
+      "name": "p_circuit_1_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT1"
+     },
+     {
+      "name": "p_circuit_2_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT2"
+     },
+     {
+      "name": "t_ambient_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Outdoor air temperature"
+     },
+     {
+      "name": "rh_ambient_pct",
+      "type": "number",
+      "unit": "%",
+      "description": "Outdoor relative humidity"
+     },
+     {
+      "name": "wind_speed_m_s",
+      "type": "number",
+      "unit": "m/s",
+      "description": "Wind speed"
+     },
+     {
+      "name": "solar_global_w_m2",
+      "type": "number",
+      "unit": "W/m2_solar",
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+     },
+     {
+      "name": "ir_net_w_m2",
+      "type": "number",
+      "unit": "W/m2_ir",
+      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+     },
+     {
+      "name": "ir_raw_signal",
+      "type": "number",
+      "unit": "raw",
+      "description": "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)"
+     }
+    ],
+    "missingValues": [
+     ""
+    ]
+   },
+   "rows": 10656,
+   "days": 37,
+   "description": "5-minute grid, 37 days, timezone Europe/Madrid; Parquet twin: harmonized/rce_2019.parquet"
+  },
+  {
+   "name": "harmonized-2022",
+   "path": "harmonized/rce_2022.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "ts_local",
+      "type": "datetime"
+     },
+     {
+      "name": "ts_utc",
+      "type": "datetime"
+     },
+     {
+      "name": "system",
+      "type": "string"
+     },
+     {
+      "name": "n_samples",
+      "type": "integer"
+     },
+     {
+      "name": "n_tanks",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'tanks' group"
+     },
+     {
+      "name": "n_circuit",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'circuit' group"
+     },
+     {
+      "name": "n_surface",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'surface' group"
+     },
+     {
+      "name": "n_flow",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'flow' group"
+     },
+     {
+      "name": "n_pressure",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'pressure' group"
+     },
+     {
+      "name": "n_ambient",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ambient' group"
+     },
+     {
+      "name": "n_solar",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'solar' group"
+     },
+     {
+      "name": "n_ir",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ir' group"
+     },
+     {
+      "name": "t_hot_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Hot storage tank temperature (DHW tank, 150 L)"
+     },
+     {
+      "name": "t_cold_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold storage tank temperature (50 L)"
+     },
+     {
+      "name": "t_cold_tank_l1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 1 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 2 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 3 (height pending)"
+     },
+     {
+      "name": "t_surface_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 1 of 6 (position pending)"
+     },
+     {
+      "name": "t_surface_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 2 of 6"
+     },
+     {
+      "name": "t_surface_3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+     },
+     {
+      "name": "t_surface_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 4 of 6"
+     },
+     {
+      "name": "t_surface_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 5 of 6"
+     },
+     {
+      "name": "t_surface_6_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 6 of 6"
+     },
+     {
+      "name": "t_circuit_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)"
+     },
+     {
+      "name": "t_circuit_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
+     },
+     {
+      "name": "t_rc_inlet_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+     },
+     {
+      "name": "t_circuit_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T4 (location pending)"
+     },
+     {
+      "name": "t_circuit_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T5 (location pending)"
+     },
+     {
+      "name": "t_circuit_7_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)"
+     },
+     {
+      "name": "t_circuit_8_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T8 (location pending)"
+     },
+     {
+      "name": "t_circuit_10_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T10 (location pending)"
+     },
+     {
+      "name": "t_circuit_11_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T11 (location pending)"
+     },
+     {
+      "name": "t_aux_tank_22_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T22 (demand emulation; pending)"
+     },
+     {
+      "name": "t_aux_tank_23_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T23 (pending)"
+     },
+     {
+      "name": "t_aux_tank_24_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T24 (pending)"
+     },
+     {
+      "name": "flow_rce_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow through the RCE (loop 1)"
+     },
+     {
+      "name": "flow_collector_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+     },
+     {
+      "name": "p_circuit_1_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT1"
+     },
+     {
+      "name": "p_circuit_2_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT2"
+     },
+     {
+      "name": "t_ambient_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Outdoor air temperature"
+     },
+     {
+      "name": "rh_ambient_pct",
+      "type": "number",
+      "unit": "%",
+      "description": "Outdoor relative humidity"
+     },
+     {
+      "name": "wind_speed_m_s",
+      "type": "number",
+      "unit": "m/s",
+      "description": "Wind speed"
+     },
+     {
+      "name": "solar_global_w_m2",
+      "type": "number",
+      "unit": "W/m2_solar",
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+     },
+     {
+      "name": "ir_net_w_m2",
+      "type": "number",
+      "unit": "W/m2_ir",
+      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+     },
+     {
+      "name": "ir_raw_signal",
+      "type": "number",
+      "unit": "raw",
+      "description": "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)"
+     }
+    ],
+    "missingValues": [
+     ""
+    ]
+   },
+   "rows": 27072,
+   "days": 94,
+   "description": "5-minute grid, 94 days, timezone Europe/Madrid; Parquet twin: harmonized/rce_2022.parquet"
+  },
+  {
+   "name": "harmonized-2023",
+   "path": "harmonized/rce_2023.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "ts_local",
+      "type": "datetime"
+     },
+     {
+      "name": "ts_utc",
+      "type": "datetime"
+     },
+     {
+      "name": "system",
+      "type": "string"
+     },
+     {
+      "name": "n_samples",
+      "type": "integer"
+     },
+     {
+      "name": "n_tanks",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'tanks' group"
+     },
+     {
+      "name": "n_circuit",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'circuit' group"
+     },
+     {
+      "name": "n_surface",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'surface' group"
+     },
+     {
+      "name": "n_flow",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'flow' group"
+     },
+     {
+      "name": "n_pressure",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'pressure' group"
+     },
+     {
+      "name": "n_ambient",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ambient' group"
+     },
+     {
+      "name": "n_solar",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'solar' group"
+     },
+     {
+      "name": "n_ir",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ir' group"
+     },
+     {
+      "name": "t_hot_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Hot storage tank temperature (DHW tank, 150 L)"
+     },
+     {
+      "name": "t_cold_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold storage tank temperature (50 L)"
+     },
+     {
+      "name": "t_cold_tank_l1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 1 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 2 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 3 (height pending)"
+     },
+     {
+      "name": "t_surface_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 1 of 6 (position pending)"
+     },
+     {
+      "name": "t_surface_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 2 of 6"
+     },
+     {
+      "name": "t_surface_3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+     },
+     {
+      "name": "t_surface_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 4 of 6"
+     },
+     {
+      "name": "t_surface_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 5 of 6"
+     },
+     {
+      "name": "t_surface_6_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 6 of 6"
+     },
+     {
+      "name": "t_circuit_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)"
+     },
+     {
+      "name": "t_circuit_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
+     },
+     {
+      "name": "t_rc_inlet_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+     },
+     {
+      "name": "t_circuit_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T4 (location pending)"
+     },
+     {
+      "name": "t_circuit_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T5 (location pending)"
+     },
+     {
+      "name": "t_circuit_7_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)"
+     },
+     {
+      "name": "t_circuit_8_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T8 (location pending)"
+     },
+     {
+      "name": "t_circuit_10_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T10 (location pending)"
+     },
+     {
+      "name": "t_circuit_11_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T11 (location pending)"
+     },
+     {
+      "name": "t_aux_tank_22_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T22 (demand emulation; pending)"
+     },
+     {
+      "name": "t_aux_tank_23_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T23 (pending)"
+     },
+     {
+      "name": "t_aux_tank_24_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T24 (pending)"
+     },
+     {
+      "name": "flow_rce_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow through the RCE (loop 1)"
+     },
+     {
+      "name": "flow_collector_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+     },
+     {
+      "name": "p_circuit_1_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT1"
+     },
+     {
+      "name": "p_circuit_2_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT2"
+     },
+     {
+      "name": "t_ambient_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Outdoor air temperature"
+     },
+     {
+      "name": "rh_ambient_pct",
+      "type": "number",
+      "unit": "%",
+      "description": "Outdoor relative humidity"
+     },
+     {
+      "name": "wind_speed_m_s",
+      "type": "number",
+      "unit": "m/s",
+      "description": "Wind speed"
+     },
+     {
+      "name": "solar_global_w_m2",
+      "type": "number",
+      "unit": "W/m2_solar",
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+     },
+     {
+      "name": "ir_net_w_m2",
+      "type": "number",
+      "unit": "W/m2_ir",
+      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+     },
+     {
+      "name": "ir_raw_signal",
+      "type": "number",
+      "unit": "raw",
+      "description": "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)"
+     }
+    ],
+    "missingValues": [
+     ""
+    ]
+   },
+   "rows": 74304,
+   "days": 258,
+   "description": "5-minute grid, 258 days, timezone Europe/Madrid; Parquet twin: harmonized/rce_2023.parquet"
+  },
+  {
+   "name": "harmonized-2024",
+   "path": "harmonized/rce_2024.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "ts_local",
+      "type": "datetime"
+     },
+     {
+      "name": "ts_utc",
+      "type": "datetime"
+     },
+     {
+      "name": "system",
+      "type": "string"
+     },
+     {
+      "name": "n_samples",
+      "type": "integer"
+     },
+     {
+      "name": "n_tanks",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'tanks' group"
+     },
+     {
+      "name": "n_circuit",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'circuit' group"
+     },
+     {
+      "name": "n_surface",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'surface' group"
+     },
+     {
+      "name": "n_flow",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'flow' group"
+     },
+     {
+      "name": "n_pressure",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'pressure' group"
+     },
+     {
+      "name": "n_ambient",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ambient' group"
+     },
+     {
+      "name": "n_solar",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'solar' group"
+     },
+     {
+      "name": "n_ir",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ir' group"
+     },
+     {
+      "name": "t_hot_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Hot storage tank temperature (DHW tank, 150 L)"
+     },
+     {
+      "name": "t_cold_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold storage tank temperature (50 L)"
+     },
+     {
+      "name": "t_cold_tank_l1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 1 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 2 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 3 (height pending)"
+     },
+     {
+      "name": "t_surface_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 1 of 6 (position pending)"
+     },
+     {
+      "name": "t_surface_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 2 of 6"
+     },
+     {
+      "name": "t_surface_3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+     },
+     {
+      "name": "t_surface_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 4 of 6"
+     },
+     {
+      "name": "t_surface_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 5 of 6"
+     },
+     {
+      "name": "t_surface_6_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 6 of 6"
+     },
+     {
+      "name": "t_circuit_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)"
+     },
+     {
+      "name": "t_circuit_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
+     },
+     {
+      "name": "t_rc_inlet_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+     },
+     {
+      "name": "t_circuit_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T4 (location pending)"
+     },
+     {
+      "name": "t_circuit_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T5 (location pending)"
+     },
+     {
+      "name": "t_circuit_7_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)"
+     },
+     {
+      "name": "t_circuit_8_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T8 (location pending)"
+     },
+     {
+      "name": "t_circuit_10_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T10 (location pending)"
+     },
+     {
+      "name": "t_circuit_11_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T11 (location pending)"
+     },
+     {
+      "name": "t_aux_tank_22_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T22 (demand emulation; pending)"
+     },
+     {
+      "name": "t_aux_tank_23_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T23 (pending)"
+     },
+     {
+      "name": "t_aux_tank_24_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T24 (pending)"
+     },
+     {
+      "name": "flow_rce_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow through the RCE (loop 1)"
+     },
+     {
+      "name": "flow_collector_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+     },
+     {
+      "name": "p_circuit_1_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT1"
+     },
+     {
+      "name": "p_circuit_2_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT2"
+     },
+     {
+      "name": "t_ambient_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Outdoor air temperature"
+     },
+     {
+      "name": "rh_ambient_pct",
+      "type": "number",
+      "unit": "%",
+      "description": "Outdoor relative humidity"
+     },
+     {
+      "name": "wind_speed_m_s",
+      "type": "number",
+      "unit": "m/s",
+      "description": "Wind speed"
+     },
+     {
+      "name": "solar_global_w_m2",
+      "type": "number",
+      "unit": "W/m2_solar",
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+     },
+     {
+      "name": "ir_net_w_m2",
+      "type": "number",
+      "unit": "W/m2_ir",
+      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+     },
+     {
+      "name": "ir_raw_signal",
+      "type": "number",
+      "unit": "raw",
+      "description": "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)"
+     }
+    ],
+    "missingValues": [
+     ""
+    ]
+   },
+   "rows": 52128,
+   "days": 181,
+   "description": "5-minute grid, 181 days, timezone Europe/Madrid; Parquet twin: harmonized/rce_2024.parquet"
+  },
+  {
+   "name": "harmonized-2025",
+   "path": "harmonized/rce_2025.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "ts_local",
+      "type": "datetime"
+     },
+     {
+      "name": "ts_utc",
+      "type": "datetime"
+     },
+     {
+      "name": "system",
+      "type": "string"
+     },
+     {
+      "name": "n_samples",
+      "type": "integer"
+     },
+     {
+      "name": "n_tanks",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'tanks' group"
+     },
+     {
+      "name": "n_circuit",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'circuit' group"
+     },
+     {
+      "name": "n_surface",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'surface' group"
+     },
+     {
+      "name": "n_flow",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'flow' group"
+     },
+     {
+      "name": "n_pressure",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'pressure' group"
+     },
+     {
+      "name": "n_ambient",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ambient' group"
+     },
+     {
+      "name": "n_solar",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'solar' group"
+     },
+     {
+      "name": "n_ir",
+      "type": "integer",
+      "description": "source readings in the interval with at least one value of the 'ir' group"
+     },
+     {
+      "name": "t_hot_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Hot storage tank temperature (DHW tank, 150 L)"
+     },
+     {
+      "name": "t_cold_tank_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold storage tank temperature (50 L)"
+     },
+     {
+      "name": "t_cold_tank_l1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 1 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 2 (height pending)"
+     },
+     {
+      "name": "t_cold_tank_l3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Cold tank stratification probe 3 (height pending)"
+     },
+     {
+      "name": "t_surface_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 1 of 6 (position pending)"
+     },
+     {
+      "name": "t_surface_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 2 of 6"
+     },
+     {
+      "name": "t_surface_3_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+     },
+     {
+      "name": "t_surface_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 4 of 6"
+     },
+     {
+      "name": "t_surface_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 5 of 6"
+     },
+     {
+      "name": "t_surface_6_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Panel surface probe 6 of 6"
+     },
+     {
+      "name": "t_circuit_1_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)"
+     },
+     {
+      "name": "t_circuit_2_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
+     },
+     {
+      "name": "t_rc_inlet_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+     },
+     {
+      "name": "t_circuit_4_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T4 (location pending)"
+     },
+     {
+      "name": "t_circuit_5_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T5 (location pending)"
+     },
+     {
+      "name": "t_circuit_7_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)"
+     },
+     {
+      "name": "t_circuit_8_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T8 (location pending)"
+     },
+     {
+      "name": "t_circuit_10_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T10 (location pending)"
+     },
+     {
+      "name": "t_circuit_11_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Circuit temperature T11 (location pending)"
+     },
+     {
+      "name": "t_aux_tank_22_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T22 (demand emulation; pending)"
+     },
+     {
+      "name": "t_aux_tank_23_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T23 (pending)"
+     },
+     {
+      "name": "t_aux_tank_24_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Auxiliary tank circuit T24 (pending)"
+     },
+     {
+      "name": "flow_rce_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow through the RCE (loop 1)"
+     },
+     {
+      "name": "flow_collector_l_min",
+      "type": "number",
+      "unit": "L/min",
+      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+     },
+     {
+      "name": "p_circuit_1_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT1"
+     },
+     {
+      "name": "p_circuit_2_bar",
+      "type": "number",
+      "unit": "bar",
+      "description": "Circuit pressure, transmitter PT2"
+     },
+     {
+      "name": "t_ambient_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Outdoor air temperature"
+     },
+     {
+      "name": "rh_ambient_pct",
+      "type": "number",
+      "unit": "%",
+      "description": "Outdoor relative humidity"
+     },
+     {
+      "name": "wind_speed_m_s",
+      "type": "number",
+      "unit": "m/s",
+      "description": "Wind speed"
+     },
+     {
+      "name": "solar_global_w_m2",
+      "type": "number",
+      "unit": "W/m2_solar",
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+     },
+     {
+      "name": "ir_net_w_m2",
+      "type": "number",
+      "unit": "W/m2_ir",
+      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+     },
+     {
+      "name": "ir_raw_signal",
+      "type": "number",
+      "unit": "raw",
+      "description": "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)"
+     }
+    ],
+    "missingValues": [
+     ""
+    ]
+   },
+   "rows": 108000,
+   "days": 196,
+   "description": "5-minute grid, 196 days, timezone Europe/Madrid; Parquet twin: harmonized/rce_2025.parquet"
+  },
+  {
+   "name": "labels-days",
+   "path": "labels/days.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date",
+      "description": "local calendar day"
+     },
+     {
+      "name": "system",
+      "type": "string",
+      "description": "RCE (single prototype 2019-2024; unsuffixed tags in 2025), RCE-a, RCE-b"
+     },
+     {
+      "name": "operated",
+      "type": "boolean",
+      "description": "flow_rce_l_min > 0.05 L/min in at least one unflagged interval; empty without usable flow"
+     },
+     {
+      "name": "flow_period",
+      "type": "string",
+      "description": "when water circulated: day (08:00-18:59 only), night, day+night, none; empty without usable flow; not the physical mode"
+     },
+     {
+      "name": "campaign_evidence",
+      "type": "string",
+      "description": "campaign tables of the energy paper that cover the day, ';'-separated"
+     },
+     {
+      "name": "exp_type",
+      "type": "string",
+      "description": "experiment type 1-4 where the laboratory diary describes the day, else 'unknown'"
+     },
+     {
+      "name": "exp_confidence",
+      "type": "string",
+      "description": "high (type named literally in the diary), medium, low; empty when unknown"
+     },
+     {
+      "name": "exp_source",
+      "type": "string",
+      "description": "diary:YYYY-MM-DD; empty when unknown"
+     },
+     {
+      "name": "diary_flag",
+      "type": "string",
+      "description": "unreliable (period declared unreliable in the diary), event, or empty"
+     },
+     {
+      "name": "notes",
+      "type": "string",
+      "description": "diary notes, campaign matches, known events"
+     }
+    ]
+   }
+  },
+  {
+   "name": "quality-daily-coverage",
+   "path": "quality/daily_coverage.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date",
+      "description": "local calendar day"
+     },
+     {
+      "name": "system",
+      "type": "string",
+      "description": "unit"
+     },
+     {
+      "name": "tanks_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'tanks' group"
+     },
+     {
+      "name": "circuit_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'circuit' group"
+     },
+     {
+      "name": "surface_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'surface' group"
+     },
+     {
+      "name": "flow_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'flow' group"
+     },
+     {
+      "name": "pressure_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'pressure' group"
+     },
+     {
+      "name": "ambient_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'ambient' group"
+     },
+     {
+      "name": "solar_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'solar' group"
+     },
+     {
+      "name": "ir_pct",
+      "type": "number",
+      "description": "share of intervals with at least one unflagged value of the 'ir' group"
+     }
+    ]
+   }
+  },
+  {
+   "name": "quality-daily-qc",
+   "path": "quality/daily_qc.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date",
+      "description": "local calendar day"
+     },
+     {
+      "name": "system",
+      "type": "string",
+      "description": "unit"
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "ok, empty or no_harmonized_variables"
+     },
+     {
+      "name": "rows_with_data",
+      "type": "integer",
+      "description": "intervals with n_samples > 0"
+     },
+     {
+      "name": "coverage_pct",
+      "type": "number",
+      "description": "share of such intervals"
+     },
+     {
+      "name": "max_gap_min",
+      "type": "integer",
+      "description": "longest run of empty intervals, minutes"
+     },
+     {
+      "name": "out_of_range_n",
+      "type": "integer",
+      "description": "values outside the reference ranges of variable_map.yaml"
+     },
+     {
+      "name": "codes_removed_n",
+      "type": "integer",
+      "description": "error codes and placeholders removed before averaging"
+     },
+     {
+      "name": "scada_invalid_n",
+      "type": "integer",
+      "description": "cells flagged 'scada_invalid'"
+     },
+     {
+      "name": "frozen_n",
+      "type": "integer",
+      "description": "cells flagged 'frozen'"
+     },
+     {
+      "name": "definition_differs_n",
+      "type": "integer",
+      "description": "cells flagged 'definition_differs'"
+     },
+     {
+      "name": "zero_n",
+      "type": "integer",
+      "description": "cells flagged 'zero'"
+     },
+     {
+      "name": "stuck_n",
+      "type": "integer",
+      "description": "cells flagged 'stuck'"
+     },
+     {
+      "name": "flow_clipped_n",
+      "type": "integer",
+      "description": "flow readings in [-0.05, 0) set to 0"
+     },
+     {
+      "name": "ts_utc_nat_n",
+      "type": "integer",
+      "description": "intervals without UTC time (daylight-saving change)"
+     },
+     {
+      "name": "suspect_sensors",
+      "type": "string",
+      "description": "variables with at least half of their values flagged that day, ',' separated"
+     },
+     {
+      "name": "validity_checked",
+      "type": "boolean",
+      "description": "a WinCC export with the Validity column covers the day"
+     }
+    ]
+   }
+  },
+  {
+   "name": "quality-cell-flags",
+   "path": "quality/cell_flags.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "system",
+      "type": "string",
+      "description": "unit"
+     },
+     {
+      "name": "ts_local",
+      "type": "datetime",
+      "description": "interval start, local time"
+     },
+     {
+      "name": "variable",
+      "type": "string",
+      "description": "canonical variable"
+     },
+     {
+      "name": "flag",
+      "type": "string",
+      "description": "scada_invalid, frozen, definition_differs, zero or stuck (docs/methodology.md)"
+     }
+    ]
+   },
+   "description": "values present in harmonized/ that should not be read as measurements; Parquet twin quality/cell_flags.parquet"
+  },
+  {
+   "name": "quality-known-events",
+   "path": "quality/known_events.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "start",
+      "type": "date",
+      "description": "first day"
+     },
+     {
+      "name": "end",
+      "type": "date",
+      "description": "last day"
+     },
+     {
+      "name": "event",
+      "type": "string",
+      "description": "what the laboratory diary records"
+     },
+     {
+      "name": "affects",
+      "type": "string",
+      "description": "all, control or a canonical variable"
+     },
+     {
+      "name": "severity",
+      "type": "string",
+      "description": "unreliable or event"
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "description": "diary"
+     }
+    ]
+   }
+  },
+  {
+   "name": "quality-lineage",
+   "path": "quality/lineage.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date",
+      "description": "day of the source layer"
+     },
+     {
+      "name": "raw_file",
+      "type": "string",
+      "description": "published file in raw/ that contributed values"
+     }
+    ]
+   }
+  },
+  {
+   "name": "raw-index",
+   "path": "raw/index.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "sha256",
+      "type": "string",
+      "description": "SHA-256 of the original content"
+     },
+     {
+      "name": "sha256_published",
+      "type": "string",
+      "description": "SHA-256 of the shipped file"
+     },
+     {
+      "name": "sanitized",
+      "type": "boolean",
+      "description": "metadata removed from an Office file"
+     },
+     {
+      "name": "sanitized_fields",
+      "type": "string",
+      "description": "what was removed"
+     },
+     {
+      "name": "published_path",
+      "type": "string",
+      "description": "path inside raw/"
+     },
+     {
+      "name": "source_basenames",
+      "type": "string",
+      "description": "original file name(s), '|' separated"
+     },
+     {
+      "name": "bytes",
+      "type": "integer",
+      "description": "size of the original file"
+     },
+     {
+      "name": "year_published",
+      "type": "string",
+      "description": "folder in raw/"
+     },
+     {
+      "name": "ext",
+      "type": "string",
+      "description": "extension"
+     },
+     {
+      "name": "kind",
+      "type": "string",
+      "description": "instrument_export, processed_workbook, spreadsheet_copy, hand_edited, logger_binary"
+     },
+     {
+      "name": "reader_hint",
+      "type": "string",
+      "description": "how to read the file"
+     },
+     {
+      "name": "used_in_harmonized",
+      "type": "boolean",
+      "description": "the file contributed values"
+     }
+    ]
+   },
+   "description": "220 original files, deduplicated by sha256"
+  },
+  {
+   "name": "raw-excluded",
+   "path": "raw/excluded.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "sha256",
+      "type": "string",
+      "description": "SHA-256 of the excluded file"
+     },
+     {
+      "name": "ext",
+      "type": "string",
+      "description": "extension"
+     },
+     {
+      "name": "exclusion_reason",
+      "type": "string",
+      "description": "why it is not published"
+     }
+    ]
+   }
+  },
+  {
+   "name": "data-dictionary",
+   "path": "docs/data_dictionary.csv",
+   "format": "csv",
+   "profile": "tabular-data-resource",
+   "schema": {
+    "fields": [
+     {
+      "name": "variable",
+      "type": "string",
+      "description": "canonical name or source column"
+     },
+     {
+      "name": "unit",
+      "type": "string",
+      "description": "unit"
+     },
+     {
+      "name": "description",
+      "type": "string",
+      "description": "meaning"
+     },
+     {
+      "name": "sensor",
+      "type": "string",
+      "description": "sensor"
+     },
+     {
+      "name": "group",
+      "type": "string",
+      "description": "variable group"
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "confirmed, pending or not_harmonized"
+     },
+     {
+      "name": "years_available",
+      "type": "string",
+      "description": "years with a source"
+     },
+     {
+      "name": "source_columns",
+      "type": "string",
+      "description": "year:source column"
+     },
+     {
+      "name": "source_ref",
+      "type": "string",
+      "description": "documentary source"
+     }
+    ]
+   }
+  }
+ ],
+ "id": "https://doi.org/10.5281/zenodo.23386247"
+}
