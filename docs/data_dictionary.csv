@@ -1,37 +1,37 @@
 variable,unit,description,sensor,group,status,years_available,source_columns,source_ref
-t_hot_tank_c,degC,"Hot storage tank temperature (DHW tank, 150 L)",Pt-100 RTD,tanks,confirmed,"2019,2023,2024,2025",2019:TempT6;2023:TempT6;2024:TempT6;2025:TempT6,ai_rce/read_data.py (hot <- TempT6); drawings A7; data_catalog/01 §1
-t_cold_tank_c,degC,Cold storage tank temperature (50 L),Pt-100 RTD,tanks,confirmed,"2019,2023,2024,2025",2019:TempT9;2023:TempT9;2024:TempT9;2025:TempT9,ai_rce/read_data.py (cold <- TempT9); A7
-t_cold_tank_l1_c,degC,Cold tank stratification probe 1 (height pending),Pt-100 RTD,tanks,pending,2025,2025:TempT9_1,A1 (tank probes) [Hip]
-t_cold_tank_l2_c,degC,Cold tank stratification probe 2 (height pending),Pt-100 RTD,tanks,pending,2025,2025:TempT9_2,A1 [Hip]
-t_cold_tank_l3_c,degC,Cold tank stratification probe 3 (height pending),Pt-100 RTD,tanks,pending,2025,2025:TempT9_3,A1 [Hip]
-t_surface_1_c,degC,Panel surface probe 1 of 6 (position pending),Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_1;2024:TempT3_1;2025:TempT3_1,A1: six surface temperature sensors
-t_surface_2_c,degC,Panel surface probe 2 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_2;2024:TempT3_2;2025:TempT3_2,A1
-t_surface_3_c,degC,"Panel surface probe 3 of 6 (A1: outlet, coldest)",Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_3;2024:TempT3_3;2025:TempT3_3,A1
-t_surface_4_c,degC,Panel surface probe 4 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_4;2024:TempT3_4;2025:TempT3_4,A1
-t_surface_5_c,degC,Panel surface probe 5 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_5;2024:TempT3_5;2025:TempT3_5,A1
-t_surface_6_c,degC,Panel surface probe 6 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_6;2024:TempT3_6;2025:TempT3_6,A1
-t_circuit_1_c,degC,Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence),Pt-100 RTD,circuit,pending,"2019,2023,2024,2025",2019:TempT1;2023:TempT1;2024:TempT1;2025:TempT1,"data_catalog/01 §1, §7"
-t_circuit_2_c,degC,Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence),Pt-100 RTD,circuit,pending,"2019,2023,2024,2025",2019:TempT2;2023:TempT2;2024:TempT2;2025:TempT2,"data_catalog/01 §1, §7"
-t_rc_inlet_c,degC,"RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)",Pt-100 RTD,circuit,confirmed,2019,2019:TempRCin,2019 logger header Tag 4 [RC_IN_TEMP]
-t_circuit_4_c,degC,Circuit temperature T4 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT4;2024:TempT4;2025:TempT4,data_catalog/01 §1
-t_circuit_5_c,degC,Circuit temperature T5 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT5;2024:TempT5;2025:TempT5,data_catalog/01 §1
-t_circuit_7_c,degC,"Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)",Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT7;2024:TempT7;2025:TempT7,data_catalog/01 §1; diary
-t_circuit_8_c,degC,Circuit temperature T8 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT8;2024:TempT8;2025:TempT8,data_catalog/01 §1
-t_circuit_10_c,degC,Circuit temperature T10 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT10;2024:TempT10;2025:TempT10,data_catalog/01 §1
-t_circuit_11_c,degC,Circuit temperature T11 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT11;2024:TempT11;2025:TempT11,data_catalog/01 §1
-t_aux_tank_22_c,degC,Auxiliary tank circuit T22 (demand emulation; pending),Pt-100 RTD,circuit,pending,2025,2025:TempT22,A7
-t_aux_tank_23_c,degC,Auxiliary tank circuit T23 (pending),Pt-100 RTD,circuit,pending,2025,2025:TempT23,A7
-t_aux_tank_24_c,degC,Auxiliary tank circuit T24 (pending),Pt-100 RTD,circuit,pending,2025,2025:TempT24,A7
-flow_rce_l_min,L/min,Volumetric flow through the RCE (loop 1),Schmidt Mess SDNC 503 (±4 %),flow,confirmed,"2019,2023,2024,2025",2019:CauQ1;2023:CauQ1;2024:CauQ1;2025:CauQ1,A1 flowmeter; tags CauQ1
-flow_collector_l_min,L/min,Volumetric flow of the collector loop (2019 campaign only),flowmeter (2019 logger),flow,confirmed,2019,2019:CauQ_col,2019 tag FLOW_COL
-p_circuit_1_bar,bar,"Circuit pressure, transmitter PT1",pressure transmitter,pressure,confirmed,"2023,2024,2025",2023:PresPT1;2024:PresPT1;2025:PresPT1,A1: two pressure sensors; diary ~2-2.5 bar
-p_circuit_2_bar,bar,"Circuit pressure, transmitter PT2",pressure transmitter,pressure,confirmed,"2023,2024,2025",2023:PresPT2;2024:PresPT2;2025:PresPT2,A1
-t_ambient_c,degC,Outdoor air temperature,weather station,ambient,confirmed,"2019,2023,2024,2025",2019:TempExt;2023:TempExt;2024:TempExt;2025:TempExt,tag TempExt / T_EXT
-rh_ambient_pct,%,Outdoor relative humidity,weather station,ambient,confirmed,"2019,2023,2024,2025",2019:HumExt;2023:HumExt;2024:HumExt;2025:HumExt,tag HumExt / HR_EXT
-wind_speed_m_s,m/s,Wind speed,weather station,ambient,confirmed,"2023,2024,2025",2023:VelVent;2024:VelVent;2025:VelVent,ai_rce/read_data.py (v_vent <- VelVent)
-solar_global_w_m2,W/m2_solar,Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025,solarimeter (IO_SENSOR1_DATA),solar,confirmed,"2019,2022,2023,2024,2025",2019:solar;2022:solar;2023:solar;2024:solar;2025:solar,ai_rce/read_data.py; tag SOLARIM (2019)
-ir_net_w_m2,W/m2_ir,"Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending",LP PIRG 01 DeltaOhm (±5 %),ir,pending,"2019,2024,2025",2019:ir_net;2024:ir_net;2025:ir_net,tag PYRG_NRAD (2019); E_FIR neto (2024-25)
-ir_raw_signal,raw,Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending),LP PIRG 01 DeltaOhm,ir,pending,"2022,2023,2024",2022:ir_raw;2023:ir_raw;2024:ir_raw,tag Efir
+t_hot_tank_c,degC,"Hot storage tank temperature (DHW tank, 150 L)",Pt-100 RTD,tanks,confirmed,"2019,2023,2024,2025",2019:TempT6;2023:TempT6;2024:TempT6;2025:TempT6,SCADA tag TempT6 (2019 logger: COL_TNK_TE); laboratory documentation
+t_cold_tank_c,degC,Cold storage tank temperature (50 L),Pt-100 RTD,tanks,confirmed,"2019,2023,2024,2025",2019:TempT9;2023:TempT9;2024:TempT9;2025:TempT9,SCADA tag TempT9 (2019 logger: RC_TNK_TEM); laboratory documentation
+t_cold_tank_l1_c,degC,Cold tank stratification probe 1 (height pending),Pt-100 RTD,tanks,pending,2025,2025:TempT9_1,SCADA tag TempT9_1; probe height to be confirmed
+t_cold_tank_l2_c,degC,Cold tank stratification probe 2 (height pending),Pt-100 RTD,tanks,pending,2025,2025:TempT9_2,SCADA tag TempT9_2; probe height to be confirmed
+t_cold_tank_l3_c,degC,Cold tank stratification probe 3 (height pending),Pt-100 RTD,tanks,pending,2025,2025:TempT9_3,SCADA tag TempT9_3; probe height to be confirmed
+t_surface_1_c,degC,Panel surface probe 1 of 6 (position pending),Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_1;2024:TempT3_1;2025:TempT3_1,SCADA tag TempT3_1; six panel-surface probes (laboratory documentation)
+t_surface_2_c,degC,Panel surface probe 2 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_2;2024:TempT3_2;2025:TempT3_2,SCADA tag TempT3_2
+t_surface_3_c,degC,"Panel surface probe 3 of 6 (outlet, coldest)",Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_3;2024:TempT3_3;2025:TempT3_3,SCADA tag TempT3_3
+t_surface_4_c,degC,Panel surface probe 4 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_4;2024:TempT3_4;2025:TempT3_4,SCADA tag TempT3_4
+t_surface_5_c,degC,Panel surface probe 5 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_5;2024:TempT3_5;2025:TempT3_5,SCADA tag TempT3_5
+t_surface_6_c,degC,Panel surface probe 6 of 6,Pt-100 RTD,surface,confirmed,"2023,2024,2025",2023:TempT3_6;2024:TempT3_6;2025:TempT3_6,SCADA tag TempT3_6
+t_circuit_1_c,degC,Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence),Pt-100 RTD,circuit,pending,"2019,2023,2024,2025",2019:TempT1;2023:TempT1;2024:TempT1;2025:TempT1,SCADA tag TempT1 (2019 logger: COL_IN_TEM)
+t_circuit_2_c,degC,Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence),Pt-100 RTD,circuit,pending,"2019,2023,2024,2025",2019:TempT2;2023:TempT2;2024:TempT2;2025:TempT2,SCADA tag TempT2 (2019 logger: RC_OU_TEM)
+t_rc_inlet_c,degC,"RCE inlet temperature, 2019 logger tag RC_IN_TEMP",Pt-100 RTD,circuit,confirmed,2019,2019:TempRCin,2019 logger tag RC_IN_TEMP
+t_circuit_4_c,degC,Circuit temperature T4 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT4;2024:TempT4;2025:TempT4,SCADA tag TempT4
+t_circuit_5_c,degC,Circuit temperature T5 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT5;2024:TempT5;2025:TempT5,SCADA tag TempT5
+t_circuit_7_c,degC,"Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)",Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT7;2024:TempT7;2025:TempT7,SCADA tag TempT7; probe faults in the laboratory diary
+t_circuit_8_c,degC,Circuit temperature T8 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT8;2024:TempT8;2025:TempT8,SCADA tag TempT8
+t_circuit_10_c,degC,Circuit temperature T10 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT10;2024:TempT10;2025:TempT10,SCADA tag TempT10
+t_circuit_11_c,degC,Circuit temperature T11 (location pending),Pt-100 RTD,circuit,pending,"2023,2024,2025",2023:TempT11;2024:TempT11;2025:TempT11,SCADA tag TempT11
+t_aux_tank_22_c,degC,Auxiliary tank circuit T22 (demand emulation; pending),Pt-100 RTD,circuit,pending,2025,2025:TempT22,SCADA tag TempT22; electrical drawings (not included)
+t_aux_tank_23_c,degC,Auxiliary tank circuit T23 (pending),Pt-100 RTD,circuit,pending,2025,2025:TempT23,SCADA tag TempT23; electrical drawings (not included)
+t_aux_tank_24_c,degC,Auxiliary tank circuit T24 (pending),Pt-100 RTD,circuit,pending,2025,2025:TempT24,SCADA tag TempT24; electrical drawings (not included)
+flow_rce_l_min,L/min,Volumetric flow through the RCE (loop 1),Schmidt Mess SDNC 503 (±4 %),flow,confirmed,"2019,2023,2024,2025",2019:CauQ1;2023:CauQ1;2024:CauQ1;2025:CauQ1,SCADA tag CauQ1 (2019 logger: FLOW_RC)
+flow_collector_l_min,L/min,Volumetric flow of the collector loop (2019 campaign only),flowmeter (2019 logger),flow,confirmed,2019,2019:CauQ_col,2019 logger tag FLOW_COL
+p_circuit_1_bar,bar,"Circuit pressure, transmitter PT1",pressure transmitter,pressure,confirmed,"2023,2024,2025",2023:PresPT1;2024:PresPT1;2025:PresPT1,SCADA tag PresPT1; laboratory diary (about 2-2.5 bar)
+p_circuit_2_bar,bar,"Circuit pressure, transmitter PT2",pressure transmitter,pressure,confirmed,"2023,2024,2025",2023:PresPT2;2024:PresPT2;2025:PresPT2,SCADA tag PresPT2
+t_ambient_c,degC,Outdoor air temperature,weather station,ambient,confirmed,"2019,2023,2024,2025",2019:TempExt;2023:TempExt;2024:TempExt;2025:TempExt,SCADA tag TempExt (2019 logger: T_EXT)
+rh_ambient_pct,%,Outdoor relative humidity,weather station,ambient,confirmed,"2019,2023,2024,2025",2019:HumExt;2023:HumExt;2024:HumExt;2025:HumExt,SCADA tag HumExt (2019 logger: HR_EXT)
+wind_speed_m_s,m/s,Wind speed,weather station,ambient,confirmed,"2023,2024,2025",2023:VelVent;2024:VelVent;2025:VelVent,SCADA tag VelVent
+solar_global_w_m2,W/m2_solar,"Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)",solarimeter (IO_SENSOR1_DATA),solar,confirmed,"2019,2022,2023,2024,2025",2019:solar;2022:solar;2023:solar;2024:solar;2025:solar,solarimeter export IO_SENSOR1_DATA (2019 logger: SOLARIM)
+ir_net_w_m2,W/m2_ir,"Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending",LP PIRG 01 DeltaOhm (±5 %),ir,pending,"2019,2024,2025",2019:ir_net;2024:ir_net;2025:ir_net,2019 logger tag PYRG_NRAD; pyrgeometer export E_FIR neto (2024-2025)
+ir_raw_signal,raw,Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending),LP PIRG 01 DeltaOhm,ir,pending,"2022,2023,2024",2022:ir_raw;2023:ir_raw;2024:ir_raw,pyrgeometer export Efir
 SEÑ_GEN_SENSOR,,undocumented radiometer field,,,not_harmonized,,,raw/ only
 TEMPC,,undocumented radiometer field,,,not_harmonized,,,raw/ only
 TEMPF,,undocumented radiometer field,,,not_harmonized,,,raw/ only

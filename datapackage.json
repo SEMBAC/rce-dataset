@@ -2,7 +2,7 @@
  "profile": "data-package",
  "name": "rce-dataset",
  "title": "RCE experimental dataset: a Radiative Collector and Emitter for combined solar heating and radiative cooling, Lleida (Spain), 2019-2025",
- "version": "0.2.0",
+ "version": "0.2.2",
  "licenses": [
   {
    "name": "CC-BY-4.0",
@@ -180,7 +180,7 @@
       "name": "t_surface_3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+      "description": "Panel surface probe 3 of 6 (outlet, coldest)"
      },
      {
       "name": "t_surface_4_c",
@@ -216,7 +216,7 @@
       "name": "t_rc_inlet_c",
       "type": "number",
       "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
      },
      {
       "name": "t_circuit_4_c",
@@ -318,7 +318,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -454,7 +454,7 @@
       "name": "t_surface_3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+      "description": "Panel surface probe 3 of 6 (outlet, coldest)"
      },
      {
       "name": "t_surface_4_c",
@@ -490,7 +490,7 @@
       "name": "t_rc_inlet_c",
       "type": "number",
       "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
      },
      {
       "name": "t_circuit_4_c",
@@ -592,7 +592,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -728,7 +728,7 @@
       "name": "t_surface_3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+      "description": "Panel surface probe 3 of 6 (outlet, coldest)"
      },
      {
       "name": "t_surface_4_c",
@@ -764,7 +764,7 @@
       "name": "t_rc_inlet_c",
       "type": "number",
       "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
      },
      {
       "name": "t_circuit_4_c",
@@ -866,7 +866,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -1002,7 +1002,7 @@
       "name": "t_surface_3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+      "description": "Panel surface probe 3 of 6 (outlet, coldest)"
      },
      {
       "name": "t_surface_4_c",
@@ -1038,7 +1038,7 @@
       "name": "t_rc_inlet_c",
       "type": "number",
       "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
      },
      {
       "name": "t_circuit_4_c",
@@ -1140,7 +1140,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -1276,7 +1276,7 @@
       "name": "t_surface_3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Panel surface probe 3 of 6 (A1: outlet, coldest)"
+      "description": "Panel surface probe 3 of 6 (outlet, coldest)"
      },
      {
       "name": "t_surface_4_c",
@@ -1312,7 +1312,7 @@
       "name": "t_rc_inlet_c",
       "type": "number",
       "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)"
+      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
      },
      {
       "name": "t_circuit_4_c",
@@ -1414,7 +1414,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -1467,7 +1467,7 @@
      {
       "name": "campaign_evidence",
       "type": "string",
-      "description": "campaign tables of the energy paper that cover the day, ';'-separated"
+      "description": "2019-2020 test campaigns of the laboratory test programme that cover the day (mode, season, flow), ';'-separated"
      },
      {
       "name": "exp_type",
@@ -1895,5 +1895,5 @@
    }
   }
  ],
- "id": "https://doi.org/10.5281/zenodo.23398277"
+ "id": "https://doi.org/10.5281/zenodo.23411460"
 }

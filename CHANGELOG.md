@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.2
+- Documentation and metadata: pointers to internal project files and unpublished documents removed from the glossary,
+  the sensor sheet, the experiment types, `docs/variable_map.yaml` (`source_ref`), `docs/data_dictionary.csv` and
+  `datapackage.json`. Provenance is given as SCADA or logger tags, the laboratory documentation and diary, and the
+  published proof of concept of the device (Energies 13 (2020) 893).
+- Glossary: performance figures of a forthcoming publication removed; entries describe terms only.
+- `labels/days.csv`: `campaign_evidence` and `notes` name the 2019–2020 test campaigns by mode and season (for example
+  `RC summer 2019 (high flow)`) instead of table numbers of an unpublished paper.
+- Pt-100 accuracy given as ±0.045 °C (was written ±0.045 %). The solarimeter is described as faulty on several
+  periods, including parts of 2025 (it was described as out of service for the whole of 2025).
+- `datapackage.json` carries the release version.
+- Measured values, flags and the other tables are unchanged from 0.2.0.
+
 ## 0.2.1
 - Acknowledgements: Generalitat de Catalunya, consolidated research group 2021 SGR 01370; full title of TED2021-131446B-I00
   (BOOST-RCE) in the funding metadata.

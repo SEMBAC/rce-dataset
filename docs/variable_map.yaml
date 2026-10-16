@@ -1,4 +1,4 @@
-version: 0.2.0
+version: 0.2.2
 timezone: Europe/Madrid
 grid_minutes: 5
 flow_zero_noise_floor: -0.05   # caudales en [-0.05, 0) -> 0
@@ -37,46 +37,46 @@ variables:
     description: Hot storage tank temperature (DHW tank, 150 L)
     sensor: Pt-100 RTD
     status: confirmed
-    source_ref: "ai_rce/read_data.py (hot <- TempT6); drawings A7; data_catalog/01 §1"
+    source_ref: "SCADA tag TempT6 (2019 logger: COL_TNK_TE); laboratory documentation"
     sources: {"2019": TempT6, "2023": TempT6, "2024": TempT6, "2025": TempT6}
   t_cold_tank_c:
     unit: degC
     description: Cold storage tank temperature (50 L)
     sensor: Pt-100 RTD
     status: confirmed
-    source_ref: "ai_rce/read_data.py (cold <- TempT9); A7"
+    source_ref: "SCADA tag TempT9 (2019 logger: RC_TNK_TEM); laboratory documentation"
     sources: {"2019": TempT9, "2023": TempT9, "2024": TempT9, "2025": TempT9}
-  t_cold_tank_l1_c: {unit: degC, description: "Cold tank stratification probe 1 (height pending)", sensor: Pt-100 RTD, status: pending, source_ref: "A1 (tank probes) [Hip]", sources: {"2025": TempT9_1}}
-  t_cold_tank_l2_c: {unit: degC, description: "Cold tank stratification probe 2 (height pending)", sensor: Pt-100 RTD, status: pending, source_ref: "A1 [Hip]", sources: {"2025": TempT9_2}}
-  t_cold_tank_l3_c: {unit: degC, description: "Cold tank stratification probe 3 (height pending)", sensor: Pt-100 RTD, status: pending, source_ref: "A1 [Hip]", sources: {"2025": TempT9_3}}
-  t_surface_1_c: {unit: degC, description: "Panel surface probe 1 of 6 (position pending)", sensor: Pt-100 RTD, status: confirmed, source_ref: "A1: six surface temperature sensors", sources: {"2023": TempT3_1, "2024": TempT3_1, "2025": TempT3_1}}
-  t_surface_2_c: {unit: degC, description: "Panel surface probe 2 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "A1", sources: {"2023": TempT3_2, "2024": TempT3_2, "2025": TempT3_2}}
-  t_surface_3_c: {unit: degC, description: "Panel surface probe 3 of 6 (A1: outlet, coldest)", sensor: Pt-100 RTD, status: confirmed, source_ref: "A1", sources: {"2023": TempT3_3, "2024": TempT3_3, "2025": TempT3_3}}
-  t_surface_4_c: {unit: degC, description: "Panel surface probe 4 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "A1", sources: {"2023": TempT3_4, "2024": TempT3_4, "2025": TempT3_4}}
-  t_surface_5_c: {unit: degC, description: "Panel surface probe 5 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "A1", sources: {"2023": TempT3_5, "2024": TempT3_5, "2025": TempT3_5}}
-  t_surface_6_c: {unit: degC, description: "Panel surface probe 6 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "A1", sources: {"2023": TempT3_6, "2024": TempT3_6, "2025": TempT3_6}}
-  t_circuit_1_c: {unit: degC, description: "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1, §7", sources: {"2019": TempT1, "2023": TempT1, "2024": TempT1, "2025": TempT1}}
-  t_circuit_2_c: {unit: degC, description: "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1, §7", sources: {"2019": TempT2, "2023": TempT2, "2024": TempT2, "2025": TempT2}}
-  t_rc_inlet_c: {unit: degC, description: "RCE inlet temperature, 2019 logger tag RC_IN_TEMP (recovered in v0.2; absent in v0.1)", sensor: Pt-100 RTD, status: confirmed, source_ref: "2019 logger header Tag 4 [RC_IN_TEMP]", sources: {"2019": TempRCin}}
-  t_circuit_4_c: {unit: degC, description: "Circuit temperature T4 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1", sources: {"2023": TempT4, "2024": TempT4, "2025": TempT4}}
-  t_circuit_5_c: {unit: degC, description: "Circuit temperature T5 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1", sources: {"2023": TempT5, "2024": TempT5, "2025": TempT5}}
-  t_circuit_7_c: {unit: degC, description: "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1; diary", sources: {"2023": TempT7, "2024": TempT7, "2025": TempT7}}
-  t_circuit_8_c: {unit: degC, description: "Circuit temperature T8 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1", sources: {"2023": TempT8, "2024": TempT8, "2025": TempT8}}
-  t_circuit_10_c: {unit: degC, description: "Circuit temperature T10 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1", sources: {"2023": TempT10, "2024": TempT10, "2025": TempT10}}
-  t_circuit_11_c: {unit: degC, description: "Circuit temperature T11 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "data_catalog/01 §1", sources: {"2023": TempT11, "2024": TempT11, "2025": TempT11}}
-  t_aux_tank_22_c: {unit: degC, description: "Auxiliary tank circuit T22 (demand emulation; pending)", sensor: Pt-100 RTD, status: pending, source_ref: "A7", sources: {"2025": TempT22}}
-  t_aux_tank_23_c: {unit: degC, description: "Auxiliary tank circuit T23 (pending)", sensor: Pt-100 RTD, status: pending, source_ref: "A7", sources: {"2025": TempT23}}
-  t_aux_tank_24_c: {unit: degC, description: "Auxiliary tank circuit T24 (pending)", sensor: Pt-100 RTD, status: pending, source_ref: "A7", sources: {"2025": TempT24}}
-  flow_rce_l_min: {unit: L/min, description: "Volumetric flow through the RCE (loop 1)", sensor: "Schmidt Mess SDNC 503 (±4 %)", status: confirmed, source_ref: "A1 flowmeter; tags CauQ1", sources: {"2019": CauQ1, "2023": CauQ1, "2024": CauQ1, "2025": CauQ1}}
-  flow_collector_l_min: {unit: L/min, description: "Volumetric flow of the collector loop (2019 campaign only)", sensor: flowmeter (2019 logger), status: confirmed, source_ref: "2019 tag FLOW_COL", sources: {"2019": CauQ_col}}
-  p_circuit_1_bar: {unit: bar, description: "Circuit pressure, transmitter PT1", sensor: pressure transmitter, status: confirmed, source_ref: "A1: two pressure sensors; diary ~2-2.5 bar", sources: {"2023": PresPT1, "2024": PresPT1, "2025": PresPT1}}
-  p_circuit_2_bar: {unit: bar, description: "Circuit pressure, transmitter PT2", sensor: pressure transmitter, status: confirmed, source_ref: "A1", sources: {"2023": PresPT2, "2024": PresPT2, "2025": PresPT2}}
-  t_ambient_c: {unit: degC, description: "Outdoor air temperature", sensor: weather station, status: confirmed, source_ref: "tag TempExt / T_EXT", sources: {"2019": TempExt, "2023": TempExt, "2024": TempExt, "2025": TempExt}}
-  rh_ambient_pct: {unit: "%", description: "Outdoor relative humidity", sensor: weather station, status: confirmed, source_ref: "tag HumExt / HR_EXT", sources: {"2019": HumExt, "2023": HumExt, "2024": HumExt, "2025": HumExt}}
-  wind_speed_m_s: {unit: m/s, description: "Wind speed", sensor: weather station, status: confirmed, source_ref: "ai_rce/read_data.py (v_vent <- VelVent)", sources: {"2023": VelVent, "2024": VelVent, "2025": VelVent}}
-  solar_global_w_m2: {unit: W/m2_solar, description: "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); sensor down in 2025", sensor: solarimeter (IO_SENSOR1_DATA), status: confirmed, source_ref: "ai_rce/read_data.py; tag SOLARIM (2019)", sources: {"2019": solar, "2022": solar, "2023": solar, "2024": solar, "2025": solar}}
-  ir_net_w_m2: {unit: W/m2_ir, description: "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending", sensor: "LP PIRG 01 DeltaOhm (±5 %)", status: pending, source_ref: "tag PYRG_NRAD (2019); E_FIR neto (2024-25)", sources: {"2019": ir_net, "2024": ir_net, "2025": ir_net}}
-  ir_raw_signal: {unit: raw, description: "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)", sensor: "LP PIRG 01 DeltaOhm", status: pending, source_ref: "tag Efir", sources: {"2022": ir_raw, "2023": ir_raw, "2024": ir_raw}}
+  t_cold_tank_l1_c: {unit: degC, description: "Cold tank stratification probe 1 (height pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT9_1; probe height to be confirmed", sources: {"2025": TempT9_1}}
+  t_cold_tank_l2_c: {unit: degC, description: "Cold tank stratification probe 2 (height pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT9_2; probe height to be confirmed", sources: {"2025": TempT9_2}}
+  t_cold_tank_l3_c: {unit: degC, description: "Cold tank stratification probe 3 (height pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT9_3; probe height to be confirmed", sources: {"2025": TempT9_3}}
+  t_surface_1_c: {unit: degC, description: "Panel surface probe 1 of 6 (position pending)", sensor: Pt-100 RTD, status: confirmed, source_ref: "SCADA tag TempT3_1; six panel-surface probes (laboratory documentation)", sources: {"2023": TempT3_1, "2024": TempT3_1, "2025": TempT3_1}}
+  t_surface_2_c: {unit: degC, description: "Panel surface probe 2 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "SCADA tag TempT3_2", sources: {"2023": TempT3_2, "2024": TempT3_2, "2025": TempT3_2}}
+  t_surface_3_c: {unit: degC, description: "Panel surface probe 3 of 6 (outlet, coldest)", sensor: Pt-100 RTD, status: confirmed, source_ref: "SCADA tag TempT3_3", sources: {"2023": TempT3_3, "2024": TempT3_3, "2025": TempT3_3}}
+  t_surface_4_c: {unit: degC, description: "Panel surface probe 4 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "SCADA tag TempT3_4", sources: {"2023": TempT3_4, "2024": TempT3_4, "2025": TempT3_4}}
+  t_surface_5_c: {unit: degC, description: "Panel surface probe 5 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "SCADA tag TempT3_5", sources: {"2023": TempT3_5, "2024": TempT3_5, "2025": TempT3_5}}
+  t_surface_6_c: {unit: degC, description: "Panel surface probe 6 of 6", sensor: Pt-100 RTD, status: confirmed, source_ref: "SCADA tag TempT3_6", sources: {"2023": TempT3_6, "2024": TempT3_6, "2025": TempT3_6}}
+  t_circuit_1_c: {unit: degC, description: "Circuit temperature T1 (physical location pending P&ID 22UDL03/25UDL01); 2019: collector inlet (approx. equivalence)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT1 (2019 logger: COL_IN_TEM)", sources: {"2019": TempT1, "2023": TempT1, "2024": TempT1, "2025": TempT1}}
+  t_circuit_2_c: {unit: degC, description: "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT2 (2019 logger: RC_OU_TEM)", sources: {"2019": TempT2, "2023": TempT2, "2024": TempT2, "2025": TempT2}}
+  t_rc_inlet_c: {unit: degC, description: "RCE inlet temperature, 2019 logger tag RC_IN_TEMP", sensor: Pt-100 RTD, status: confirmed, source_ref: "2019 logger tag RC_IN_TEMP", sources: {"2019": TempRCin}}
+  t_circuit_4_c: {unit: degC, description: "Circuit temperature T4 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT4", sources: {"2023": TempT4, "2024": TempT4, "2025": TempT4}}
+  t_circuit_5_c: {unit: degC, description: "Circuit temperature T5 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT5", sources: {"2023": TempT5, "2024": TempT5, "2025": TempT5}}
+  t_circuit_7_c: {unit: degC, description: "Circuit temperature T7 (location pending; probe faults logged 2024-04-30, 2024-05-13)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT7; probe faults in the laboratory diary", sources: {"2023": TempT7, "2024": TempT7, "2025": TempT7}}
+  t_circuit_8_c: {unit: degC, description: "Circuit temperature T8 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT8", sources: {"2023": TempT8, "2024": TempT8, "2025": TempT8}}
+  t_circuit_10_c: {unit: degC, description: "Circuit temperature T10 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT10", sources: {"2023": TempT10, "2024": TempT10, "2025": TempT10}}
+  t_circuit_11_c: {unit: degC, description: "Circuit temperature T11 (location pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT11", sources: {"2023": TempT11, "2024": TempT11, "2025": TempT11}}
+  t_aux_tank_22_c: {unit: degC, description: "Auxiliary tank circuit T22 (demand emulation; pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT22; electrical drawings (not included)", sources: {"2025": TempT22}}
+  t_aux_tank_23_c: {unit: degC, description: "Auxiliary tank circuit T23 (pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT23; electrical drawings (not included)", sources: {"2025": TempT23}}
+  t_aux_tank_24_c: {unit: degC, description: "Auxiliary tank circuit T24 (pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT24; electrical drawings (not included)", sources: {"2025": TempT24}}
+  flow_rce_l_min: {unit: L/min, description: "Volumetric flow through the RCE (loop 1)", sensor: "Schmidt Mess SDNC 503 (±4 %)", status: confirmed, source_ref: "SCADA tag CauQ1 (2019 logger: FLOW_RC)", sources: {"2019": CauQ1, "2023": CauQ1, "2024": CauQ1, "2025": CauQ1}}
+  flow_collector_l_min: {unit: L/min, description: "Volumetric flow of the collector loop (2019 campaign only)", sensor: flowmeter (2019 logger), status: confirmed, source_ref: "2019 logger tag FLOW_COL", sources: {"2019": CauQ_col}}
+  p_circuit_1_bar: {unit: bar, description: "Circuit pressure, transmitter PT1", sensor: pressure transmitter, status: confirmed, source_ref: "SCADA tag PresPT1; laboratory diary (about 2-2.5 bar)", sources: {"2023": PresPT1, "2024": PresPT1, "2025": PresPT1}}
+  p_circuit_2_bar: {unit: bar, description: "Circuit pressure, transmitter PT2", sensor: pressure transmitter, status: confirmed, source_ref: "SCADA tag PresPT2", sources: {"2023": PresPT2, "2024": PresPT2, "2025": PresPT2}}
+  t_ambient_c: {unit: degC, description: "Outdoor air temperature", sensor: weather station, status: confirmed, source_ref: "SCADA tag TempExt (2019 logger: T_EXT)", sources: {"2019": TempExt, "2023": TempExt, "2024": TempExt, "2025": TempExt}}
+  rh_ambient_pct: {unit: "%", description: "Outdoor relative humidity", sensor: weather station, status: confirmed, source_ref: "SCADA tag HumExt (2019 logger: HR_EXT)", sources: {"2019": HumExt, "2023": HumExt, "2024": HumExt, "2025": HumExt}}
+  wind_speed_m_s: {unit: m/s, description: "Wind speed", sensor: weather station, status: confirmed, source_ref: "SCADA tag VelVent", sources: {"2023": VelVent, "2024": VelVent, "2025": VelVent}}
+  solar_global_w_m2: {unit: W/m2_solar, description: "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)", sensor: solarimeter (IO_SENSOR1_DATA), status: confirmed, source_ref: "solarimeter export IO_SENSOR1_DATA (2019 logger: SOLARIM)", sources: {"2019": solar, "2022": solar, "2023": solar, "2024": solar, "2025": solar}}
+  ir_net_w_m2: {unit: W/m2_ir, description: "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending", sensor: "LP PIRG 01 DeltaOhm (±5 %)", status: pending, source_ref: "2019 logger tag PYRG_NRAD; pyrgeometer export E_FIR neto (2024-2025)", sources: {"2019": ir_net, "2024": ir_net, "2025": ir_net}}
+  ir_raw_signal: {unit: raw, description: "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)", sensor: "LP PIRG 01 DeltaOhm", status: pending, source_ref: "pyrgeometer export Efir", sources: {"2022": ir_raw, "2023": ir_raw, "2024": ir_raw}}
 not_harmonized:
   - {column: SEÑ_GEN_SENSOR, reason: undocumented radiometer field}
   - {column: TEMPC, reason: undocumented radiometer field}
