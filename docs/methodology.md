@@ -47,18 +47,23 @@ The 2019 tags were mapped to the modern names (`docs/variable_map.yaml`):
 | `COL_TNK_TE` | `TempT6` | `t_hot_tank_c` | hot tank |
 | `RC_TNK_TEM` | `TempT9` | `t_cold_tank_c` | cold tank |
 | `COL_IN_TEM` | `TempT1` | `t_circuit_1_c` | approximate equivalence; no sensor connected in 2019 |
-| `RC_OU_TEM` | `TempT2` | `t_circuit_2_c` | approximate equivalence |
-| `RC_IN_TEMP` | `TempRCin` | `t_rc_inlet_c` | RCE inlet |
+| `RC_OU_TEM` | `TempT2` | `t_circuit_2_c` | RCE inlet (T2); approximate equivalence |
+| `RC_IN_TEMP` | `TempRCin` | `t_circuit_4_c` | RCE outlet (T4); approximate equivalence |
 | `FLOW_RC` | `CauQ1` | `flow_rce_l_min` | |
 | `FLOW_COL` | `CauQ_col` | `flow_collector_l_min` | 2019 only |
 | `PYRG_NRAD` | `ir_net` | `ir_net_w_m2` | negative = net loss to the sky (see `known_issues.md` #5) |
-| `SOLARIM` | `solar` | `solar_global_w_m2` | mounting plane pending |
+| `SOLARIM` | `solar` | `solar_global_w_m2` | mounting plane not documented |
 | `T_EXT`, `HR_EXT` | `TempExt`, `HumExt` | `t_ambient_c`, `rh_ambient_pct` | |
 
 In the files `RCE.CSV` 00–08 (10–25 July 2019) the header has an empty column and every following label sits one
 position too far to the right, while the data keep the normal order. These files are read **by position** in the
 order `COL_IN_TEM, COL_TNK_TE, FLOW_COL, FLOW_RC, RC_OU_TEM, RC_TNK_TEM, RC_IN_TEMP` (the order the later files carry
 in their header).
+
+The 2019 tags name the RCE temperatures from the cold-tank side: `RC_OU_TEM` (out of the tank) is the fluid entering
+the panel and `RC_IN_TEMP` (into the tank) the fluid leaving it. They are therefore published in the same columns as the
+2023–2025 probes T2 (RCE inlet) and T4 (RCE outlet), and the inlet–outlet difference is `t_circuit_2_c − t_circuit_4_c`
+in every year.
 
 ## The 5-minute grid
 - Intervals `[hh:00, hh:05)`, labelled by their start (`ts_local` floored to 5 minutes, local time).
@@ -107,8 +112,9 @@ evaluated. `daily_coverage.csv` gives, per variable group, the share of interval
 ## Systems
 - `system = RCE`: the single prototype (2019–2024) and, in 2025, tags without a unit suffix (cold-tank stratification
   probes, auxiliary tank probes).
-- `system = RCE-a` / `RCE-b`: tags with suffix `_RCEa` / `_RCEb` (2025). The automatic unit was built in 2025; which of
-  the two it is is **to be confirmed by the team**.
+- `system = RCE-a` / `RCE-b`: tags with suffix `_RCEa` / `_RCEb` (2025). Unit A is the original prototype, automated
+  in 2025 (controller); unit B was built in 2025 as the manual test bench, next to unit A. The single pyrgeometer is on
+  unit A.
 
 ## What is not transformed
 No calibration, no sign change of the infrared signal, no unit conversion of raw radiometer signals, no filling of

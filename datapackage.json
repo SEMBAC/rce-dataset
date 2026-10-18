@@ -2,7 +2,7 @@
  "profile": "data-package",
  "name": "rce-dataset",
  "title": "RCE experimental dataset: a Radiative Collector and Emitter for combined solar heating and radiative cooling, Lleida (Spain), 2019-2025",
- "version": "0.2.2",
+ "version": "0.2.3",
  "licenses": [
   {
    "name": "CC-BY-4.0",
@@ -14,47 +14,47 @@
   {
    "title": "Vitor da Silva",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Albert Castell",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Roger Vila",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
-   "title": "Boniface Dominick Mselle",
+   "title": "Boniface Mselle",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Cristian Solé",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Josep Lluís Lérida",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Marc Medrano",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Fernando Guirado",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   },
   {
    "title": "Ingrid Martorell",
    "role": "author",
-   "organization": "SEMBAC, University of Lleida, Spain"
+   "organization": "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain)"
   }
  ],
  "keywords": [
@@ -150,19 +150,19 @@
       "name": "t_cold_tank_l1_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 1 (height pending)"
+      "description": "Cold tank stratification probe 1 (height not documented)"
      },
      {
       "name": "t_cold_tank_l2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 2 (height pending)"
+      "description": "Cold tank stratification probe 2 (height not documented)"
      },
      {
       "name": "t_cold_tank_l3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 3 (height pending)"
+      "description": "Cold tank stratification probe 3 (height not documented)"
      },
      {
       "name": "t_surface_1_c",
@@ -210,19 +210,13 @@
       "name": "t_circuit_2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
-     },
-     {
-      "name": "t_rc_inlet_c",
-      "type": "number",
-      "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
+      "description": "RCE inlet temperature T2 (fluid entering the panel; exact probe position pending); 2019: logger tag RC_OU_TEM, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_4_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T4 (location pending)"
+      "description": "RCE outlet temperature T4 (fluid leaving the panel; exact probe position pending); 2019: logger tag RC_IN_TEMP, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_5_c",
@@ -318,7 +312,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -424,19 +418,19 @@
       "name": "t_cold_tank_l1_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 1 (height pending)"
+      "description": "Cold tank stratification probe 1 (height not documented)"
      },
      {
       "name": "t_cold_tank_l2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 2 (height pending)"
+      "description": "Cold tank stratification probe 2 (height not documented)"
      },
      {
       "name": "t_cold_tank_l3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 3 (height pending)"
+      "description": "Cold tank stratification probe 3 (height not documented)"
      },
      {
       "name": "t_surface_1_c",
@@ -484,19 +478,13 @@
       "name": "t_circuit_2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
-     },
-     {
-      "name": "t_rc_inlet_c",
-      "type": "number",
-      "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
+      "description": "RCE inlet temperature T2 (fluid entering the panel; exact probe position pending); 2019: logger tag RC_OU_TEM, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_4_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T4 (location pending)"
+      "description": "RCE outlet temperature T4 (fluid leaving the panel; exact probe position pending); 2019: logger tag RC_IN_TEMP, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_5_c",
@@ -592,7 +580,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -698,19 +686,19 @@
       "name": "t_cold_tank_l1_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 1 (height pending)"
+      "description": "Cold tank stratification probe 1 (height not documented)"
      },
      {
       "name": "t_cold_tank_l2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 2 (height pending)"
+      "description": "Cold tank stratification probe 2 (height not documented)"
      },
      {
       "name": "t_cold_tank_l3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 3 (height pending)"
+      "description": "Cold tank stratification probe 3 (height not documented)"
      },
      {
       "name": "t_surface_1_c",
@@ -758,19 +746,13 @@
       "name": "t_circuit_2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
-     },
-     {
-      "name": "t_rc_inlet_c",
-      "type": "number",
-      "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
+      "description": "RCE inlet temperature T2 (fluid entering the panel; exact probe position pending); 2019: logger tag RC_OU_TEM, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_4_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T4 (location pending)"
+      "description": "RCE outlet temperature T4 (fluid leaving the panel; exact probe position pending); 2019: logger tag RC_IN_TEMP, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_5_c",
@@ -866,7 +848,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -972,19 +954,19 @@
       "name": "t_cold_tank_l1_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 1 (height pending)"
+      "description": "Cold tank stratification probe 1 (height not documented)"
      },
      {
       "name": "t_cold_tank_l2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 2 (height pending)"
+      "description": "Cold tank stratification probe 2 (height not documented)"
      },
      {
       "name": "t_cold_tank_l3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 3 (height pending)"
+      "description": "Cold tank stratification probe 3 (height not documented)"
      },
      {
       "name": "t_surface_1_c",
@@ -1032,19 +1014,13 @@
       "name": "t_circuit_2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
-     },
-     {
-      "name": "t_rc_inlet_c",
-      "type": "number",
-      "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
+      "description": "RCE inlet temperature T2 (fluid entering the panel; exact probe position pending); 2019: logger tag RC_OU_TEM, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_4_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T4 (location pending)"
+      "description": "RCE outlet temperature T4 (fluid leaving the panel; exact probe position pending); 2019: logger tag RC_IN_TEMP, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_5_c",
@@ -1140,7 +1116,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -1246,19 +1222,19 @@
       "name": "t_cold_tank_l1_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 1 (height pending)"
+      "description": "Cold tank stratification probe 1 (height not documented)"
      },
      {
       "name": "t_cold_tank_l2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 2 (height pending)"
+      "description": "Cold tank stratification probe 2 (height not documented)"
      },
      {
       "name": "t_cold_tank_l3_c",
       "type": "number",
       "unit": "degC",
-      "description": "Cold tank stratification probe 3 (height pending)"
+      "description": "Cold tank stratification probe 3 (height not documented)"
      },
      {
       "name": "t_surface_1_c",
@@ -1306,19 +1282,13 @@
       "name": "t_circuit_2_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T2 (location pending); 2019: RC outlet (approx. equivalence)"
-     },
-     {
-      "name": "t_rc_inlet_c",
-      "type": "number",
-      "unit": "degC",
-      "description": "RCE inlet temperature, 2019 logger tag RC_IN_TEMP"
+      "description": "RCE inlet temperature T2 (fluid entering the panel; exact probe position pending); 2019: logger tag RC_OU_TEM, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_4_c",
       "type": "number",
       "unit": "degC",
-      "description": "Circuit temperature T4 (location pending)"
+      "description": "RCE outlet temperature T4 (fluid leaving the panel; exact probe position pending); 2019: logger tag RC_IN_TEMP, named from the cold-tank side (approx. equivalence)"
      },
      {
       "name": "t_circuit_5_c",
@@ -1414,7 +1384,7 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — to be confirmed by the team); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
@@ -1895,5 +1865,5 @@
    }
   }
  ],
- "id": "https://doi.org/10.5281/zenodo.23411460"
+ "id": "https://doi.org/10.5281/zenodo.23458309"
 }

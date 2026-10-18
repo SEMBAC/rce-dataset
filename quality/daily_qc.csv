@@ -1,7 +1,7 @@
 date,system,status,rows_with_data,coverage_pct,max_gap_min,out_of_range_n,codes_removed_n,scada_invalid_n,frozen_n,definition_differs_n,zero_n,stuck_n,flow_clipped_n,ts_utc_nat_n,suspect_sensors,validity_checked
 2019-07-10,RCE,ok,12,4.2,790,12,0,0,0,12,0,0,0,0,ir_net_w_m2,False
-2019-07-11,RCE,ok,173,60.1,530,174,0,0,0,173,0,0,144,0,ir_net_w_m2,False
-2019-07-12,RCE,ok,248,86.1,155,248,0,0,0,248,0,0,13,0,ir_net_w_m2,False
+2019-07-11,RCE,ok,173,60.1,530,174,0,0,0,341,0,0,144,0,"t_circuit_4_c,ir_net_w_m2",False
+2019-07-12,RCE,ok,248,86.1,155,248,0,0,0,383,0,0,13,0,"t_circuit_4_c,ir_net_w_m2",False
 2019-07-13,RCE,no_harmonized_variables,0,0.0,1440,0,0,0,0,0,0,0,0,0,,False
 2019-07-14,RCE,ok,177,61.5,510,177,0,0,0,177,0,0,0,0,ir_net_w_m2,False
 2019-07-15,RCE,ok,268,93.1,50,268,0,0,0,268,0,0,611,0,ir_net_w_m2,False

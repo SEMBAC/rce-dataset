@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.2.3
+- **2019 RCE inlet and outlet.** The 2019 logger names the RCE temperatures from the cold-tank side: `RC_OU_TEM` (out of
+  the tank) is the fluid entering the panel and `RC_IN_TEMP` (into the tank) the fluid leaving it. Up to 0.2.2 `RC_IN_TEMP`
+  was published as `t_rc_inlet_c`, an inlet name for the outlet. From 0.2.3 the 2019 outlet is in `t_circuit_4_c` and the
+  inlet stays in `t_circuit_2_c`, the columns of the 2023–2025 probes T4 and T2, so the inlet–outlet difference is
+  `t_circuit_2_c − t_circuit_4_c` in every year. **The column `t_rc_inlet_c` no longer exists**: scripts that read it
+  must read `t_circuit_4_c` and treat it as the outlet. With flow at night, the inlet is warmer than the outlet in 96 % of
+  the 2019 intervals (median +0.34 K), as expected in radiative cooling.
+- 2019-07-11 09:15 to 2019-07-12 11:10: a hand-edited source file repeats the inlet in the outlet column; these
+  303 cells of `t_circuit_4_c` are flagged `definition_differs` (values kept).
+- Descriptions of `t_circuit_2_c` and `t_circuit_4_c`: RCE inlet (T2) and RCE outlet (T4); exact probe positions not documented.
+- **Units in 2025**: unit A (`RCE-a`) is the original prototype, automated in 2025 and driven by the controller; unit B
+  (`RCE-b`) was built in 2025 next to it as the manual test bench. There is a single pyrgeometer, on unit A; its values
+  apply to both units and the unit-B pyrgeometer tags are not a measurement (glossary, methodology, known issues #5 and #8).
+- Items the project files do not state (probe positions and heights, solarimeter model and mounting plane, sign
+  convention of the infrared signal, units of the 2025 electrical meters) are declared as *not documented* instead of
+  *to be confirmed*.
+- Site: the prototype is on the roof of the CREA building (Escola Politècnica Superior, Universitat de Lleida).
+- Metadata: author affiliation written as "SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001
+  Lleida (Spain)"; author name "Mselle, Boniface".
+- Measured values are otherwise unchanged from 0.2.2.
+
 ## 0.2.2
 - Documentation and metadata: pointers to internal project files and unpublished documents removed from the glossary,
   the sensor sheet, the experiment types, `docs/variable_map.yaml` (`source_ref`), `docs/data_dictionary.csv` and

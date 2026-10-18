@@ -45,4 +45,4 @@ The campaigns that cover a harmonized day are listed in `campaign_evidence` of `
 `exp_type` is set only where the diary describes the day; `exp_confidence` says how directly: `high` when the diary
 names the type literally ("experiment tipus 1"), `medium` or `low` when the type is inferred from the described
 procedure (two of these days could be type 2 or 3). The large majority of days are `unknown`. This is a fact about
-the records, not a defect of the data, and the team is reviewing the list of days to confirm.
+the records, not a defect of the data.

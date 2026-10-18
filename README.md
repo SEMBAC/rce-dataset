@@ -1,4 +1,4 @@
-# RCE experimental dataset — version 0.2.2
+# RCE experimental dataset — version 0.2.3
 
 
 
@@ -90,11 +90,11 @@ Variable meanings and units: `docs/data_dictionary.csv`. New to the device? Star
 - Timestamps: `ts_local` is Europe/Madrid local time as recorded; `ts_utc` is derived.
 
 ## Citation
-See `CITATION.cff`. DOI: [https://doi.org/10.5281/zenodo.23411460](https://doi.org/10.5281/zenodo.23411460).
+See `CITATION.cff`. DOI: [https://doi.org/10.5281/zenodo.23458309](https://doi.org/10.5281/zenodo.23458309).
 
 ## Authors
-Vitor da Silva, Albert Castell, Roger Vila, Boniface Dominick Mselle, Cristian Solé, Josep Lluís Lérida, Marc Medrano,
-Fernando Guirado, Ingrid Martorell — SEMBAC, University of Lleida, Spain.
+Vitor da Silva, Albert Castell, Roger Vila, Boniface Mselle, Cristian Solé, Josep Lluís Lérida, Marc Medrano,
+Fernando Guirado, Ingrid Martorell — SEMBAC, Universitat de Lleida, Edifici CREA, C/Pere de Cabrera s/n. 25001 Lleida (Spain).
 
 ## Licence
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). See `LICENSE`.
