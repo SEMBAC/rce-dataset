@@ -15,8 +15,24 @@ Everything in this dataset was **measured** (provenance `real`). No simulated or
 | `labels/days.csv` | One row per day and unit: `operated`, `flow_period` (when water circulated; not the physical mode), experiment type with its confidence and diary source, `diary_flag` (days the laboratory declared unreliable), notes. |
 | `quality/` | `cell_flags.csv` / `.parquet` (values present but not to be read as measurements, one row per flagged cell), `daily_coverage.csv` (usable share of each variable group per day), `daily_qc.csv` (gaps, flags, removed codes, out-of-range counts, suspect sensors), `known_events.csv` (laboratory diary), `lineage.csv` (original files behind each day), `known_issues.md`. |
 | `raw/` | Original files behind the harmonized values (SCADA/logger exports and the processed monthly workbooks; analysis workbooks, documents and legacy `.xls` excluded), deduplicated by SHA-256, with `index.csv` (file names, not folder paths; original and published hashes; `kind`; `used_in_harmonized`), `excluded.csv` and `checksums.sha256`. Excel files are published without personal or machine metadata; cell values are untouched (see `docs/methodology.md`). |
-| `docs/` | `glossary.md` (for non-specialists), `sensors_and_site.md`, `data_dictionary.csv`, `variable_map.yaml`, `methodology.md`, `experiment_types.md`. |
+| `docs/` | `estructura_carpetas.md` (folder structure, in Spanish), `glossary.md` (for non-specialists), `sensors_and_site.md`, `data_dictionary.csv`, `variable_map.yaml`, `methodology.md`, `experiment_types.md`. |
 | `datapackage.json` | Machine-readable description (Frictionless Data). |
+
+## Estructura de carpetas
+```text
+rce-dataset/
+├── harmonized/        Los datos: una tabla por año (rce_AAAA.parquet │ .csv), un valor cada 5 minutos
+├── labels/            Qué pasó cada día: days.csv (funcionamiento, circulación del agua, tipo de ensayo)
+├── quality/           Cuánto fiarse: celdas marcadas, cobertura y control diario, incidencias, trazabilidad
+├── raw/               De dónde sale todo: índice, exclusiones y huellas SHA-256 (originales en Zenodo)
+├── docs/              Cómo entenderlo: glosario, diccionario, sensores, metodología, tipos de ensayo
+├── datapackage.json   Descripción legible por máquina (Frictionless Data)
+├── CITATION.cff       Cómo citar el dataset
+├── CHANGELOG.md       Cambios de cada versión
+└── LICENSE            CC BY 4.0
+```
+Guía completa en castellano, con cada fichero, sus columnas, la nomenclatura y cómo se cruzan las tablas:
+[`docs/estructura_carpetas.md`](docs/estructura_carpetas.md).
 
 ## Years and days (harmonized layer)
 | Year | Days | Rows (5-min) |
