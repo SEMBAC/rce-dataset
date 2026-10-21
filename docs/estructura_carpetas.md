@@ -62,7 +62,7 @@ flowchart LR
     A["raw/<br/>ficheros originales<br/>(SCADA, logger, Excel)"] -->|"lectura, nombres canónicos,<br/>promedio a 5 min"| B["harmonized/<br/>rce_AAAA"]
     A -.->|"lineage.csv"| B
     B --> C["quality/<br/>cell_flags · daily_qc<br/>daily_coverage"]
-    D["diario de laboratorio<br/>y artículo de energía"] --> E["labels/days.csv"]
+    D["diario de laboratorio,<br/>análisis de los ensayos<br/>y plan de ensayos"] --> E["labels/days.csv"]
     D --> F["quality/known_events.csv"]
     B --> E
 ```
@@ -87,7 +87,7 @@ existía ese año, su columna aparece vacía.
 | Circuito hidráulico | `t_circuit_1_c` … `t_circuit_11_c`, `t_aux_tank_22_c` … `24_c` | Temperaturas del circuito; `t_circuit_2_c` es la entrada al panel y `t_circuit_4_c` la salida |
 | Caudal y presión | `flow_rce_l_min`, `flow_collector_l_min`, `p_circuit_1_bar`, `p_circuit_2_bar` | Caudal en litros por minuto y presión en bar |
 | Meteorología | `t_ambient_c`, `rh_ambient_pct`, `wind_speed_m_s` | Temperatura exterior, humedad relativa y velocidad del viento |
-| Radiación | `solar_global_w_m2`, `ir_net_w_m2`, `ir_raw_signal` | Radiación solar, infrarroja neta y señal infrarroja sin convertir |
+| Radiación | `solar_global_w_m2`, `ir_net_w_m2`, `ir_down_w_m2`, `t_pyrgeometer_c`, `ir_raw_signal` | Radiación solar global horizontal; infrarroja neta del pirgeómetro (negativa = pérdida neta hacia el cielo); infrarroja atmosférica descendente y temperatura del cuerpo del pirgeómetro (2024–2025); señal infrarroja sin convertir |
 
 **La columna `system`** dice qué equipo se midió:
 
@@ -113,7 +113,8 @@ Hay un solo pirgeómetro (sensor de infrarrojo), instalado en la unidad A. Su me
 | `diary_flag` | `unreliable` si el laboratorio declaró el día poco fiable; `event` si anotó una incidencia |
 | `notes` | Observaciones |
 
-El tipo de ensayo solo se asigna cuando el diario de laboratorio o el artículo de energía lo respaldan. Las definiciones
+El tipo de ensayo solo se asigna cuando lo documenta el análisis del laboratorio de los ensayos nocturnos de 2023–2024
+(`exp_source = lab_analysis`, que prevalece) o el diario de laboratorio (`exp_source = diary:<fecha>`). Las definiciones
 están en [`experiment_types.md`](experiment_types.md).
 
 ### `quality/`: cuánto fiarse de cada valor

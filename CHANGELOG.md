@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.4
+- **Experiment types 2 and 3**, as defined by the energy group: (2) the tank starts at a set temperature and then
+  evolves freely; (3) the initial temperature is fixed and maintained during the whole test. Up to 0.2.3 type 2 was
+  described as a held inlet temperature, which is type 3.
+- **23 night tests of 2023–2024 labelled** from the laboratory analysis of those tests (type 1: 13, type 2: 3, type 3: 5, type 4: 2);
+  `exp_source = lab_analysis`, `exp_confidence = high`. This classification wins over the diary reading, which stays in
+  `notes` (2024-04-04 becomes type 3; 2023-07-13 type 1).
+- **2019 flows:** the panel had two loops that alternated, each with its own flowmeter (daytime loop to the hot tank,
+  `flow_collector_l_min`; night loop to the cold tank, `flow_rce_l_min`). `operated` and `flow_period` now use both.
+- **Solarimeter:** Kipp & Zonen SMP6-A, installed in 2017, calibrated in 2020, mounted horizontally (global horizontal
+  irradiance).
+- **New variables (2024–2025):** `ir_down_w_m2`, downwelling atmospheric longwave irradiance from the pyrgeometer
+  readout, and `t_pyrgeometer_c`, temperature of the pyrgeometer body. `ir_net_w_m2` is documented as downwelling
+  longwave minus the emission of the sensor body: negative values mean a net loss to the sky.
+- Folder guide (`docs/estructura_carpetas.md`) and README: new longwave columns and the sources of the experiment types.
+- Measured values of the existing variables are unchanged from 0.2.3.
+
 ## 0.2.3
 - **2019 RCE inlet and outlet.** The 2019 logger names the RCE temperatures from the cold-tank side: `RC_OU_TEM` (out of
   the tank) is the fluid entering the panel and `RC_IN_TEMP` (into the tank) the fluid leaving it. Up to 0.2.2 `RC_IN_TEMP`

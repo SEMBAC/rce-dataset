@@ -2,7 +2,7 @@
  "profile": "data-package",
  "name": "rce-dataset",
  "title": "RCE experimental dataset: a Radiative Collector and Emitter for combined solar heating and radiative cooling, Lleida (Spain), 2019-2025",
- "version": "0.2.3",
+ "version": "0.2.4",
  "licenses": [
   {
    "name": "CC-BY-4.0",
@@ -270,13 +270,13 @@
       "name": "flow_rce_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow through the RCE (loop 1)"
+      "description": "Volumetric flow through the RCE panel; from 2022 a single flowmeter for both modes. 2019: night loop only (panel to cold tank, radiative cooling); the daytime loop is flow_collector_l_min"
      },
      {
       "name": "flow_collector_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+      "description": "2019 only: daytime loop of the panel (panel to hot tank, solar heating), with its own flowmeter; it alternates with the night loop (flow_rce_l_min)"
      },
      {
       "name": "p_circuit_1_bar",
@@ -312,13 +312,25 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global horizontal solar irradiance (solarimeter mounted horizontally); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
       "type": "number",
       "unit": "W/m2_ir",
-      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+      "description": "Net longwave (infrared) radiation at the pyrgeometer: downwelling atmospheric longwave minus the emission of the sensor body; negative = net loss to the sky (radiative cooling potential). Until 2019-07-24 ~13:00 the 2019 channel recorded another quantity (flag definition_differs)"
+     },
+     {
+      "name": "ir_down_w_m2",
+      "type": "number",
+      "unit": "W/m2_lwdown",
+      "description": "Downwelling (atmospheric) longwave irradiance from the sky, as given by the pyrgeometer readout; equals ir_net_w_m2 plus the emission of the sensor body (sigma T^4 of t_pyrgeometer_c)"
+     },
+     {
+      "name": "t_pyrgeometer_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Temperature of the pyrgeometer body (used to compute the sensor emission)"
      },
      {
       "name": "ir_raw_signal",
@@ -538,13 +550,13 @@
       "name": "flow_rce_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow through the RCE (loop 1)"
+      "description": "Volumetric flow through the RCE panel; from 2022 a single flowmeter for both modes. 2019: night loop only (panel to cold tank, radiative cooling); the daytime loop is flow_collector_l_min"
      },
      {
       "name": "flow_collector_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+      "description": "2019 only: daytime loop of the panel (panel to hot tank, solar heating), with its own flowmeter; it alternates with the night loop (flow_rce_l_min)"
      },
      {
       "name": "p_circuit_1_bar",
@@ -580,13 +592,25 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global horizontal solar irradiance (solarimeter mounted horizontally); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
       "type": "number",
       "unit": "W/m2_ir",
-      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+      "description": "Net longwave (infrared) radiation at the pyrgeometer: downwelling atmospheric longwave minus the emission of the sensor body; negative = net loss to the sky (radiative cooling potential). Until 2019-07-24 ~13:00 the 2019 channel recorded another quantity (flag definition_differs)"
+     },
+     {
+      "name": "ir_down_w_m2",
+      "type": "number",
+      "unit": "W/m2_lwdown",
+      "description": "Downwelling (atmospheric) longwave irradiance from the sky, as given by the pyrgeometer readout; equals ir_net_w_m2 plus the emission of the sensor body (sigma T^4 of t_pyrgeometer_c)"
+     },
+     {
+      "name": "t_pyrgeometer_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Temperature of the pyrgeometer body (used to compute the sensor emission)"
      },
      {
       "name": "ir_raw_signal",
@@ -806,13 +830,13 @@
       "name": "flow_rce_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow through the RCE (loop 1)"
+      "description": "Volumetric flow through the RCE panel; from 2022 a single flowmeter for both modes. 2019: night loop only (panel to cold tank, radiative cooling); the daytime loop is flow_collector_l_min"
      },
      {
       "name": "flow_collector_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+      "description": "2019 only: daytime loop of the panel (panel to hot tank, solar heating), with its own flowmeter; it alternates with the night loop (flow_rce_l_min)"
      },
      {
       "name": "p_circuit_1_bar",
@@ -848,13 +872,25 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global horizontal solar irradiance (solarimeter mounted horizontally); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
       "type": "number",
       "unit": "W/m2_ir",
-      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+      "description": "Net longwave (infrared) radiation at the pyrgeometer: downwelling atmospheric longwave minus the emission of the sensor body; negative = net loss to the sky (radiative cooling potential). Until 2019-07-24 ~13:00 the 2019 channel recorded another quantity (flag definition_differs)"
+     },
+     {
+      "name": "ir_down_w_m2",
+      "type": "number",
+      "unit": "W/m2_lwdown",
+      "description": "Downwelling (atmospheric) longwave irradiance from the sky, as given by the pyrgeometer readout; equals ir_net_w_m2 plus the emission of the sensor body (sigma T^4 of t_pyrgeometer_c)"
+     },
+     {
+      "name": "t_pyrgeometer_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Temperature of the pyrgeometer body (used to compute the sensor emission)"
      },
      {
       "name": "ir_raw_signal",
@@ -1074,13 +1110,13 @@
       "name": "flow_rce_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow through the RCE (loop 1)"
+      "description": "Volumetric flow through the RCE panel; from 2022 a single flowmeter for both modes. 2019: night loop only (panel to cold tank, radiative cooling); the daytime loop is flow_collector_l_min"
      },
      {
       "name": "flow_collector_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+      "description": "2019 only: daytime loop of the panel (panel to hot tank, solar heating), with its own flowmeter; it alternates with the night loop (flow_rce_l_min)"
      },
      {
       "name": "p_circuit_1_bar",
@@ -1116,13 +1152,25 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global horizontal solar irradiance (solarimeter mounted horizontally); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
       "type": "number",
       "unit": "W/m2_ir",
-      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+      "description": "Net longwave (infrared) radiation at the pyrgeometer: downwelling atmospheric longwave minus the emission of the sensor body; negative = net loss to the sky (radiative cooling potential). Until 2019-07-24 ~13:00 the 2019 channel recorded another quantity (flag definition_differs)"
+     },
+     {
+      "name": "ir_down_w_m2",
+      "type": "number",
+      "unit": "W/m2_lwdown",
+      "description": "Downwelling (atmospheric) longwave irradiance from the sky, as given by the pyrgeometer readout; equals ir_net_w_m2 plus the emission of the sensor body (sigma T^4 of t_pyrgeometer_c)"
+     },
+     {
+      "name": "t_pyrgeometer_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Temperature of the pyrgeometer body (used to compute the sensor emission)"
      },
      {
       "name": "ir_raw_signal",
@@ -1342,13 +1390,13 @@
       "name": "flow_rce_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow through the RCE (loop 1)"
+      "description": "Volumetric flow through the RCE panel; from 2022 a single flowmeter for both modes. 2019: night loop only (panel to cold tank, radiative cooling); the daytime loop is flow_collector_l_min"
      },
      {
       "name": "flow_collector_l_min",
       "type": "number",
       "unit": "L/min",
-      "description": "Volumetric flow of the collector loop (2019 campaign only)"
+      "description": "2019 only: daytime loop of the panel (panel to hot tank, solar heating), with its own flowmeter; it alternates with the night loop (flow_rce_l_min)"
      },
      {
       "name": "p_circuit_1_bar",
@@ -1384,13 +1432,25 @@
       "name": "solar_global_w_m2",
       "type": "number",
       "unit": "W/m2_solar",
-      "description": "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)"
+      "description": "Global horizontal solar irradiance (solarimeter mounted horizontally); faults on several periods, including parts of 2025 (known issue #4)"
      },
      {
       "name": "ir_net_w_m2",
       "type": "number",
       "unit": "W/m2_ir",
-      "description": "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending"
+      "description": "Net longwave (infrared) radiation at the pyrgeometer: downwelling atmospheric longwave minus the emission of the sensor body; negative = net loss to the sky (radiative cooling potential). Until 2019-07-24 ~13:00 the 2019 channel recorded another quantity (flag definition_differs)"
+     },
+     {
+      "name": "ir_down_w_m2",
+      "type": "number",
+      "unit": "W/m2_lwdown",
+      "description": "Downwelling (atmospheric) longwave irradiance from the sky, as given by the pyrgeometer readout; equals ir_net_w_m2 plus the emission of the sensor body (sigma T^4 of t_pyrgeometer_c)"
+     },
+     {
+      "name": "t_pyrgeometer_c",
+      "type": "number",
+      "unit": "degC",
+      "description": "Temperature of the pyrgeometer body (used to compute the sensor emission)"
      },
      {
       "name": "ir_raw_signal",
@@ -1865,5 +1925,5 @@
    }
   }
  ],
- "id": "https://doi.org/10.5281/zenodo.23458309"
+ "id": "https://doi.org/10.5281/zenodo.23529834"
 }

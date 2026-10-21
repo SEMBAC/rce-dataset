@@ -18,15 +18,16 @@
 | Sensor | Model / type | Accuracy | Canonical variables | Years |
 |---|---|---|---|---|
 | Temperature probes | Pt-100 RTD | ±0.045 °C | t_hot_tank_c, t_cold_tank_c, t_circuit_*, t_surface_*, t_cold_tank_l* | 2019–2025 |
-| Flowmeter | Schmidt Mess SDNC 503 | ±4 % | flow_rce_l_min (flow_collector_l_min in 2019) | 2019–2025 |
+| Flowmeter, panel loop | Schmidt Mess SDNC 503 | ±4 % | flow_rce_l_min (2019: night loop to the cold tank only) | 2019–2025 |
+| Flowmeter, 2019 daytime loop | model not documented | — | flow_collector_l_min (panel to hot tank; alternates with the night loop) | 2019 |
 | Pressure transmitters | PT1, PT2 | — | p_circuit_1_bar, p_circuit_2_bar | 2023–2025 |
-| Pyranometer / solarimeter | (tag IO_SENSOR1_DATA); model and mounting plane not documented | — | solar_global_w_m2 | 2019–2025 (faults in 2025, see `quality/known_issues.md` #4) |
-| Pyrgeometer | LP PIRG 01 DeltaOhm, one sensor on unit A (applies to both units) | ±5 % | ir_net_w_m2 (2019, 2024–25), ir_raw_signal (2022–24) | 2019–2025 |
+| Pyranometer / solarimeter | Kipp & Zonen SMP6-A (installed 2017, calibrated 2020), mounted horizontally; tag IO_SENSOR1_DATA | — | solar_global_w_m2 (global horizontal irradiance) | 2019–2025 (faults in 2025, see `quality/known_issues.md` #4) |
+| Pyrgeometer | LP PIRG 01 DeltaOhm, one sensor on unit A (applies to both units) | ±5 % | ir_net_w_m2 (2019, 2024–25), ir_down_w_m2 and t_pyrgeometer_c (2024–25), ir_raw_signal (2022–24) | 2019–2025 |
 | Weather | outdoor station | — | t_ambient_c, rh_ambient_pct, wind_speed_m_s | 2019–2025 (wind from 2023) |
 
 The accuracies are those stated for the same Pt-100, SDNC 503 and LP PIRG 01 instrument types in the published proof
 of concept of the device (S. Vall, M. Medrano, C. Solé, A. Castell, Energies 13 (2020) 893,
-https://doi.org/10.3390/en13040893). No calibration records are available for 2022–2025.
+https://doi.org/10.3390/en13040893). The solarimeter was calibrated in 2020; no other calibration records are available for 2022–2025.
 
 ## Simplified diagram
 ```mermaid

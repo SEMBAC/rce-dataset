@@ -1,4 +1,4 @@
-version: 0.2.3
+version: 0.2.4
 timezone: Europe/Madrid
 grid_minutes: 5
 flow_zero_noise_floor: -0.05   # caudales en [-0.05, 0) -> 0
@@ -14,7 +14,7 @@ groups:
   pressure: [p_circuit_1_bar, p_circuit_2_bar]
   ambient: [t_ambient_c, rh_ambient_pct, wind_speed_m_s]
   solar: [solar_global_w_m2]
-  ir: [ir_net_w_m2, ir_raw_signal]
+  ir: [ir_net_w_m2, ir_down_w_m2, t_pyrgeometer_c, ir_raw_signal]
 ranges:   # rango de referencia para el indicador de QC (el valor NUNCA se modifica).
   # Los límites inferiores toleran el offset de cero habitual de los sensores (solar nocturno ligeramente
   # negativo, HR 100,1 %, viento/presión -0,0x) para que el indicador señale anomalías reales, no ruido.
@@ -25,6 +25,7 @@ ranges:   # rango de referencia para el indicador de QC (el valor NUNCA se modif
   m/s: [-0.1, 40]
   W/m2_solar: [-20, 1400]
   W/m2_ir: [-300, 300]
+  W/m2_lwdown: [100, 600]   # downwelling (atmospheric) longwave, typically 200-450 W/m2
 codes:    # values that are error codes, not measurements: removed (NaN) before averaging; counted in daily_qc.codes_removed_n
   degC: [-20.0, -10.0]          # transmitter limit codes seen in 2025 (unsuffixed tags)
   raw: [996298.6]               # pyrgeometer raw-signal overflow (Dec 2023 - Jan 2024)
@@ -68,15 +69,17 @@ variables:
   t_aux_tank_22_c: {unit: degC, description: "Auxiliary tank circuit T22 (demand emulation; pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT22; electrical drawings (not included)", sources: {"2025": TempT22}}
   t_aux_tank_23_c: {unit: degC, description: "Auxiliary tank circuit T23 (pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT23; electrical drawings (not included)", sources: {"2025": TempT23}}
   t_aux_tank_24_c: {unit: degC, description: "Auxiliary tank circuit T24 (pending)", sensor: Pt-100 RTD, status: pending, source_ref: "SCADA tag TempT24; electrical drawings (not included)", sources: {"2025": TempT24}}
-  flow_rce_l_min: {unit: L/min, description: "Volumetric flow through the RCE (loop 1)", sensor: "Schmidt Mess SDNC 503 (±4 %)", status: confirmed, source_ref: "SCADA tag CauQ1 (2019 logger: FLOW_RC)", sources: {"2019": CauQ1, "2023": CauQ1, "2024": CauQ1, "2025": CauQ1}}
-  flow_collector_l_min: {unit: L/min, description: "Volumetric flow of the collector loop (2019 campaign only)", sensor: flowmeter (2019 logger), status: confirmed, source_ref: "2019 logger tag FLOW_COL", sources: {"2019": CauQ_col}}
+  flow_rce_l_min: {unit: L/min, description: "Volumetric flow through the RCE panel; from 2022 a single flowmeter for both modes. 2019: night loop only (panel to cold tank, radiative cooling); the daytime loop is flow_collector_l_min", sensor: "Schmidt Mess SDNC 503 (±4 %)", status: confirmed, source_ref: "SCADA tag CauQ1 (2019 logger: FLOW_RC)", sources: {"2019": CauQ1, "2023": CauQ1, "2024": CauQ1, "2025": CauQ1}}
+  flow_collector_l_min: {unit: L/min, description: "2019 only: daytime loop of the panel (panel to hot tank, solar heating), with its own flowmeter; it alternates with the night loop (flow_rce_l_min)", sensor: flowmeter (2019 logger), status: confirmed, source_ref: "2019 logger tag FLOW_COL", sources: {"2019": CauQ_col}}
   p_circuit_1_bar: {unit: bar, description: "Circuit pressure, transmitter PT1", sensor: pressure transmitter, status: confirmed, source_ref: "SCADA tag PresPT1; laboratory diary (about 2-2.5 bar)", sources: {"2023": PresPT1, "2024": PresPT1, "2025": PresPT1}}
   p_circuit_2_bar: {unit: bar, description: "Circuit pressure, transmitter PT2", sensor: pressure transmitter, status: confirmed, source_ref: "SCADA tag PresPT2", sources: {"2023": PresPT2, "2024": PresPT2, "2025": PresPT2}}
   t_ambient_c: {unit: degC, description: "Outdoor air temperature", sensor: weather station, status: confirmed, source_ref: "SCADA tag TempExt (2019 logger: T_EXT)", sources: {"2019": TempExt, "2023": TempExt, "2024": TempExt, "2025": TempExt}}
   rh_ambient_pct: {unit: "%", description: "Outdoor relative humidity", sensor: weather station, status: confirmed, source_ref: "SCADA tag HumExt (2019 logger: HR_EXT)", sources: {"2019": HumExt, "2023": HumExt, "2024": HumExt, "2025": HumExt}}
   wind_speed_m_s: {unit: m/s, description: "Wind speed", sensor: weather station, status: confirmed, source_ref: "SCADA tag VelVent", sources: {"2023": VelVent, "2024": VelVent, "2025": VelVent}}
-  solar_global_w_m2: {unit: W/m2_solar, description: "Global solar irradiance from the solarimeter (mounting plane — horizontal or panel plane — not documented); faults on several periods, including parts of 2025 (known issue #4)", sensor: solarimeter (IO_SENSOR1_DATA), status: confirmed, source_ref: "solarimeter export IO_SENSOR1_DATA (2019 logger: SOLARIM)", sources: {"2019": solar, "2022": solar, "2023": solar, "2024": solar, "2025": solar}}
-  ir_net_w_m2: {unit: W/m2_ir, description: "Net longwave (infrared) radiation from the pyrgeometer, sign AS RECORDED (2019: negative = net loss to the sky); unified convention pending", sensor: "LP PIRG 01 DeltaOhm (±5 %)", status: pending, source_ref: "2019 logger tag PYRG_NRAD; pyrgeometer export E_FIR neto (2024-2025)", sources: {"2019": ir_net, "2024": ir_net, "2025": ir_net}}
+  solar_global_w_m2: {unit: W/m2_solar, description: "Global horizontal solar irradiance (solarimeter mounted horizontally); faults on several periods, including parts of 2025 (known issue #4)", sensor: "Kipp & Zonen SMP6-A, installed 2017, calibrated 2020", status: confirmed, source_ref: "solarimeter export IO_SENSOR1_DATA (2019 logger: SOLARIM)", sources: {"2019": solar, "2022": solar, "2023": solar, "2024": solar, "2025": solar}}
+  ir_net_w_m2: {unit: W/m2_ir, description: "Net longwave (infrared) radiation at the pyrgeometer: downwelling atmospheric longwave minus the emission of the sensor body; negative = net loss to the sky (radiative cooling potential). Until 2019-07-24 ~13:00 the 2019 channel recorded another quantity (flag definition_differs)", sensor: "LP PIRG 01 DeltaOhm (±5 %)", status: confirmed, source_ref: "2019 logger tag PYRG_NRAD; pyrgeometer export E_FIR neto (2024-2025)", sources: {"2019": ir_net, "2024": ir_net, "2025": ir_net}}
+  ir_down_w_m2: {unit: W/m2_lwdown, description: "Downwelling (atmospheric) longwave irradiance from the sky, as given by the pyrgeometer readout; equals ir_net_w_m2 plus the emission of the sensor body (sigma T^4 of t_pyrgeometer_c)", sensor: "LP PIRG 01 DeltaOhm (±5 %)", status: confirmed, source_ref: "pyrgeometer export E_FIR lect. (2024-2025)", sources: {"2024": ir_lect, "2025": ir_lect}}
+  t_pyrgeometer_c: {unit: degC, description: "Temperature of the pyrgeometer body (used to compute the sensor emission)", sensor: "LP PIRG 01 DeltaOhm (NTC)", status: confirmed, source_ref: "pyrgeometer export T_pyrg (2024-2025)", sources: {"2024": "T_pyrg [°C]", "2025": "T_pyrg [°C]"}}
   ir_raw_signal: {unit: raw, description: "Pyrgeometer raw signal as exported (2023 and part of 2024); not converted to W/m2 (unit pending)", sensor: "LP PIRG 01 DeltaOhm", status: pending, source_ref: "pyrgeometer export Efir", sources: {"2022": ir_raw, "2023": ir_raw, "2024": ir_raw}}
 not_harmonized:
   - {column: SEÑ_GEN_SENSOR, reason: undocumented radiometer field}

@@ -2,7 +2,7 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2019-07-10,RCE,True,day,,unknown,,,,
 2019-07-11,RCE,True,day+night,,unknown,,,,
 2019-07-12,RCE,True,day+night,,unknown,,,,
-2019-07-14,RCE,True,night,,unknown,,,,
+2019-07-14,RCE,True,day+night,,unknown,,,,
 2019-07-15,RCE,True,day+night,,unknown,,,,
 2019-07-16,RCE,True,day+night,,unknown,,,,
 2019-07-17,RCE,True,day+night,RC summer 2019 (high flow);SH summer 2019,unknown,,,,test campaign: RC summer 2019 (high flow); test campaign: SH summer 2019
@@ -239,15 +239,15 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2023-06-11,RCE,True,day+night,,unknown,,,,
 2023-06-12,RCE,True,day+night,,unknown,,,,
 2023-06-13,RCE,True,day+night,,unknown,,,,
-2023-06-14,RCE,True,day+night,,unknown,,,,
-2023-06-15,RCE,True,day+night,,unknown,,,,
+2023-06-14,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2023-06-15,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2023-06-16,RCE,True,day+night,,unknown,,,,
 2023-06-17,RCE,True,day+night,,unknown,,,,
 2023-06-18,RCE,True,day+night,,unknown,,,,
 2023-06-19,RCE,True,day+night,,unknown,,,,
 2023-06-20,RCE,True,day+night,,unknown,,,,
 2023-06-21,RCE,True,day+night,,unknown,,,,
-2023-06-22,RCE,True,day+night,,unknown,,,,
+2023-06-22,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2023-06-23,RCE,True,day+night,,unknown,,,,
 2023-06-24,RCE,True,day+night,,unknown,,,,
 2023-06-25,RCE,True,day+night,,unknown,,,,
@@ -268,12 +268,12 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2023-07-10,RCE,True,day+night,,unknown,,,unreliable,Water circulation problems; the diary states that the daytime data of 2023-07-11 are not usable for analysis [diary]
 2023-07-11,RCE,True,day,,unknown,,,unreliable,Water circulation problems; the diary states that the daytime data of 2023-07-11 are not usable for analysis [diary]
 2023-07-12,RCE,False,none,,unknown,,,unreliable,Water circulation problems; the diary states that the daytime data of 2023-07-11 are not usable for analysis [diary]
-2023-07-13,RCE,True,day+night,,2,low,diary:2023-07-13,unreliable,cold tank set point changed from 30 to 45 C (inlet temperature fixed); type 2 or 3; Water circulation problems; the diary states that the daytime data of 2023-07-11 are not usable for analysis [diary]
+2023-07-13,RCE,True,day+night,,1,high,lab_analysis,unreliable,"night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests); diary (type 2, low): cold tank set point changed from 30 to 45 C (inlet temperature fixed); type 2 or 3; Water circulation problems; the diary states that the daytime data of 2023-07-11 are not usable for analysis [diary]"
 2023-07-14,RCE,True,day+night,,unknown,,,,
 2023-07-15,RCE,True,day+night,,unknown,,,,
 2023-07-16,RCE,True,day+night,,unknown,,,,
-2023-07-17,RCE,True,day+night,,unknown,,,,
-2023-07-18,RCE,True,day+night,,unknown,,,,
+2023-07-17,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2023-07-18,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2023-07-19,RCE,True,day+night,,unknown,,,,
 2023-07-20,RCE,True,day+night,,unknown,,,event,Power cut (logging gap) [diary]
 2023-07-21,RCE,True,night,,unknown,,,,
@@ -325,8 +325,8 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2023-10-08,RCE,True,day+night,,unknown,,,,
 2023-10-09,RCE,True,day+night,,unknown,,,,
 2023-10-10,RCE,True,day+night,,unknown,,,,
-2023-10-11,RCE,True,day+night,,unknown,,,,
-2023-10-12,RCE,True,day+night,,unknown,,,,
+2023-10-11,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2023-10-12,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2023-10-13,RCE,True,day+night,,unknown,,,,
 2023-10-14,RCE,True,day+night,,unknown,,,,
 2023-10-15,RCE,True,day+night,,unknown,,,,
@@ -416,7 +416,7 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2024-02-10,RCE,True,day+night,,unknown,,,,
 2024-02-11,RCE,True,day+night,,unknown,,,,
 2024-02-12,RCE,True,day,,unknown,,,,
-2024-02-13,RCE,True,day,,unknown,,,,
+2024-02-13,RCE,True,day,,4,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-02-14,RCE,True,day,,unknown,,,event,Power cut (logging gap) [diary]
 2024-02-15,RCE,True,day+night,,unknown,,,,
 2024-02-16,RCE,True,day+night,,unknown,,,,
@@ -429,41 +429,41 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2024-02-23,RCE,True,day,,unknown,,,,
 2024-02-26,RCE,True,day,,unknown,,,,
 2024-02-27,RCE,True,day,,unknown,,,,
-2024-02-28,RCE,True,day+night,,2,medium,diary:2024-02-28,,radiative cooling with the initial temperature fixed at 42 C; valves operated by hand; type 2 or 3
-2024-02-29,RCE,True,day+night,,unknown,,,,
+2024-02-28,RCE,True,day+night,,2,high,lab_analysis,,"night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests); diary (type 2, medium): radiative cooling with the initial temperature fixed at 42 C; valves operated by hand; type 2 or 3"
+2024-02-29,RCE,True,day+night,,2,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-03-01,RCE,True,day+night,,unknown,,,,
 2024-03-02,RCE,True,day,,unknown,,,,
 2024-03-03,RCE,True,day,,unknown,,,,
 2024-03-04,RCE,True,day,,unknown,,,,
-2024-03-05,RCE,True,day+night,,unknown,,,,
-2024-03-06,RCE,True,day+night,,3,medium,diary:2024-03-06,,cold-tank circulation and heater keeping the inlet temperature constant at 40-42 C
+2024-03-05,RCE,True,day+night,,2,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2024-03-06,RCE,True,day+night,,3,high,lab_analysis,,"night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests); diary (type 3, medium): cold-tank circulation and heater keeping the inlet temperature constant at 40-42 C"
 2024-03-07,RCE,True,day+night,,unknown,,,,
 2024-03-08,RCE,True,day,,unknown,,,,
 2024-03-11,RCE,True,day,,unknown,,,,
 2024-03-12,RCE,True,day,,unknown,,,,
-2024-03-13,RCE,True,day+night,,unknown,,,,
-2024-03-14,RCE,True,day+night,,unknown,,,,
+2024-03-13,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2024-03-14,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-03-15,RCE,True,day+night,,unknown,,,,
 2024-03-18,RCE,True,day+night,,unknown,,,,
-2024-03-19,RCE,True,day+night,,unknown,,,,
+2024-03-19,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-03-20,RCE,True,day+night,,unknown,,,,
-2024-03-21,RCE,True,day+night,,unknown,,,,
+2024-03-21,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-03-22,RCE,True,day+night,,unknown,,,,
 2024-04-02,RCE,True,day+night,,unknown,,,,
-2024-04-03,RCE,True,day+night,,unknown,,,,
-2024-04-04,RCE,True,day+night,,2,medium,diary:2024-04-04,,radiative cooling with the inlet temperature controlled at 40 C
+2024-04-03,RCE,True,day+night,,1,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2024-04-04,RCE,True,day+night,,3,high,lab_analysis,,"night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests); diary (type 2, medium): radiative cooling with the inlet temperature controlled at 40 C"
 2024-04-05,RCE,True,day+night,,unknown,,,,
 2024-04-06,RCE,True,day+night,,unknown,,,,
 2024-04-07,RCE,True,day+night,,unknown,,,,
 2024-04-08,RCE,True,day+night,,unknown,,,,
 2024-04-09,RCE,True,day+night,,unknown,,,,
-2024-04-10,RCE,True,day+night,,unknown,,,,
+2024-04-10,RCE,True,day+night,,3,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-04-11,RCE,True,day+night,,unknown,,,,
 2024-04-12,RCE,True,day+night,,unknown,,,,
 2024-04-13,RCE,True,day+night,,unknown,,,,
 2024-04-14,RCE,True,day+night,,unknown,,,,
-2024-04-15,RCE,True,day+night,,unknown,,,,
-2024-04-16,RCE,True,day+night,,unknown,,,,
+2024-04-15,RCE,True,day+night,,3,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
+2024-04-16,RCE,True,day+night,,3,high,lab_analysis,,night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests)
 2024-04-17,RCE,True,day+night,,unknown,,,,
 2024-04-18,RCE,True,day,,unknown,,,,
 2024-07-15,RCE,False,none,,unknown,,,,
@@ -496,7 +496,7 @@ date,system,operated,flow_period,campaign_evidence,exp_type,exp_confidence,exp_s
 2024-09-25,RCE,True,day+night,,1,high,diary:2024-09-25,,diary: 'experiment tipus 1'
 2024-09-26,RCE,True,day+night,,unknown,,,,
 2024-09-27,RCE,True,day,,unknown,,,,
-2024-10-01,RCE,False,none,,4,high,diary:2024-10-01,,diary: 'experiment tipus 4'; taps and pump closed (stagnant water)
+2024-10-01,RCE,False,none,,4,high,lab_analysis,,"night test starting on this date (laboratory analysis of the 2023-2024 radiative-cooling tests); diary (type 4, high): diary: 'experiment tipus 4'; taps and pump closed (stagnant water)"
 2024-10-02,RCE,True,day+night,,unknown,,,,
 2024-10-03,RCE,True,day,,4,high,diary:2024-10-03,,diary: 'experiment tipus 4'; clear sky
 2024-10-04,RCE,True,day+night,,unknown,,,,

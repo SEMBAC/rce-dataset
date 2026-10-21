@@ -49,10 +49,10 @@ The 2019 tags were mapped to the modern names (`docs/variable_map.yaml`):
 | `COL_IN_TEM` | `TempT1` | `t_circuit_1_c` | approximate equivalence; no sensor connected in 2019 |
 | `RC_OU_TEM` | `TempT2` | `t_circuit_2_c` | RCE inlet (T2); approximate equivalence |
 | `RC_IN_TEMP` | `TempRCin` | `t_circuit_4_c` | RCE outlet (T4); approximate equivalence |
-| `FLOW_RC` | `CauQ1` | `flow_rce_l_min` | |
-| `FLOW_COL` | `CauQ_col` | `flow_collector_l_min` | 2019 only |
+| `FLOW_RC` | `CauQ1` | `flow_rce_l_min` | night loop (panel to cold tank) |
+| `FLOW_COL` | `CauQ_col` | `flow_collector_l_min` | 2019 only; daytime loop (panel to hot tank) |
 | `PYRG_NRAD` | `ir_net` | `ir_net_w_m2` | negative = net loss to the sky (see `known_issues.md` #5) |
-| `SOLARIM` | `solar` | `solar_global_w_m2` | mounting plane not documented |
+| `SOLARIM` | `solar` | `solar_global_w_m2` | horizontal (global horizontal irradiance) |
 | `T_EXT`, `HR_EXT` | `TempExt`, `HumExt` | `t_ambient_c`, `rh_ambient_pct` | |
 
 In the files `RCE.CSV` 00–08 (10–25 July 2019) the header has an empty column and every following label sits one
@@ -95,13 +95,16 @@ When several rules apply, the first in the table is kept. `daily_qc.csv` counts 
 evaluated. `daily_coverage.csv` gives, per variable group, the share of intervals with at least one unflagged value.
 
 ## Labels (`labels/days.csv`)
-- `operated`: water circulated through the RCE (`flow_rce_l_min` > 0.05 L/min in at least one unflagged interval);
+- `operated`: water circulated through the RCE (`flow_rce_l_min`, or in 2019 the daytime loop `flow_collector_l_min`,
+  > 0.05 L/min in at least one unflagged interval);
   empty when the day has no usable flow reading.
 - `flow_period`: when water circulated — `day` (08:00–18:59 only), `night`, `day+night`, `none`; empty without usable
   flow. It is **not** the physical operating mode (solar heating or radiative cooling): the valve and cover states that
   would define the mode are not recorded (`known_issues.md` #13).
 - `exp_type`, `exp_confidence`, `exp_source`: experiment type (1–4, `docs/experiment_types.md`) only where the
-  laboratory diary describes the day, with the confidence of that reading (`high` = the diary names the type literally).
+  laboratory diary describes the day (`exp_source = diary:<date>`) or the laboratory analysis of the 2023–2024 night
+  tests classifies it (`exp_source = lab_analysis`, which wins over the diary; the diary reading is kept in `notes`),
+  with the confidence of that reading (`high` = laboratory analysis, or the diary names the type literally).
 - `diary_flag`: `unreliable` when the diary declares the period unreliable, `event` for other recorded events.
 
 ## Time
@@ -122,8 +125,8 @@ gaps, no removal of out-of-range values (they are counted in `quality/daily_qc.c
 
 ## Columns not harmonized
 Source columns whose meaning or scale is not documented (`SEÑ_GEN_SENSOR`, `TEMPC`, `TEMPF`, `VALORES_MEDIOS`,
-`IO_BODY_TEMPERATURE`, `IO_RAW_SENSOR1_DATA`, `solar_pyr`, `PreP21`, `E_FIR, calc.`, `E_FIR, lect.`, pyrgeometer
-temperatures and EMF signal, electrical meters) are not in the harmonized tables. They remain available in `raw/`;
+`IO_BODY_TEMPERATURE`, `IO_RAW_SENSOR1_DATA`, `solar_pyr`, `PreP21`, `E_FIR, calc.` (equal to `ir_down_w_m2`
+within about 1 W/m²), the pyrgeometer temperature in °F and its EMF signal, electrical meters) are not in the harmonized tables. They remain available in `raw/`;
 the main ones are listed in `docs/data_dictionary.csv` with status `not_harmonized`.
 
 ## Reproducibility

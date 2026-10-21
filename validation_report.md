@@ -8,6 +8,6 @@
 | grid_no_duplicates | ✅ | no duplicate grid rows |
 | utc_monotonic | ✅ | ts_utc monotonic per day |
 | no_secrets | ✅ | no emails/paths/secrets/person names found; Office metadata clean |
-| size_summary | ✅ | 253 files, 1.25 GB |
+| size_summary | ✅ | 254 files, 1.25 GB |
 
 **ALL PASS**

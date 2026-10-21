@@ -577,7 +577,7 @@ date,system,status,rows_with_data,coverage_pct,max_gap_min,out_of_range_n,codes_
 2024-12-13,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,0,0,,True
 2024-12-14,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,0,0,,True
 2024-12-15,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,0,0,,True
-2024-12-16,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,0,0,,True
+2024-12-16,RCE,ok,288,100.0,0,0,0,0,0,0,20,0,0,0,,True
 2024-12-17,RCE,ok,78,27.1,1050,0,0,0,0,0,0,0,0,0,,True
 2025-01-08,RCE,ok,122,42.4,830,0,0,0,0,0,0,0,0,0,,True
 2025-01-09,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,0,0,,True
@@ -802,7 +802,7 @@ date,system,status,rows_with_data,coverage_pct,max_gap_min,out_of_range_n,codes_
 2025-10-27,RCE-a,ok,133,46.2,775,0,0,0,0,0,0,0,8,0,,True
 2025-10-27,RCE-b,ok,133,46.2,775,0,0,0,0,0,798,133,8,0,"t_surface_1_c,t_surface_2_c,t_surface_3_c,t_surface_4_c,t_surface_5_c,t_surface_6_c,ir_net_w_m2",True
 2025-10-28,RCE,ok,288,100.0,0,0,0,0,0,0,864,0,0,0,"t_cold_tank_l1_c,t_cold_tank_l2_c,t_cold_tank_l3_c",True
-2025-10-28,RCE-a,ok,288,100.0,0,0,0,0,0,0,0,0,0,0,,True
+2025-10-28,RCE-a,ok,288,100.0,0,3,0,0,0,0,0,0,0,0,,True
 2025-10-28,RCE-b,ok,288,100.0,0,0,0,0,0,0,1728,288,0,0,"t_surface_1_c,t_surface_2_c,t_surface_3_c,t_surface_4_c,t_surface_5_c,t_surface_6_c,ir_net_w_m2",True
 2025-10-29,RCE,ok,278,96.5,30,0,0,0,0,0,807,0,30,0,"t_cold_tank_l1_c,t_cold_tank_l2_c,t_cold_tank_l3_c",True
 2025-10-29,RCE-a,ok,278,96.5,30,0,0,0,0,0,0,0,30,0,,True
@@ -892,7 +892,7 @@ date,system,status,rows_with_data,coverage_pct,max_gap_min,out_of_range_n,codes_
 2025-11-26,RCE-a,ok,284,98.6,10,0,0,0,0,0,284,0,7,0,solar_global_w_m2,True
 2025-11-26,RCE-b,ok,284,98.6,10,0,0,0,0,0,1674,279,7,0,"t_surface_1_c,t_surface_2_c,t_surface_3_c,t_surface_4_c,t_surface_5_c,t_surface_6_c,ir_net_w_m2",True
 2025-11-27,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,191,0,,True
-2025-11-27,RCE-a,ok,288,100.0,0,0,0,0,0,0,288,0,191,0,solar_global_w_m2,True
+2025-11-27,RCE-a,ok,288,100.0,0,0,0,0,0,0,300,0,191,0,solar_global_w_m2,True
 2025-11-27,RCE-b,ok,288,100.0,0,0,0,0,0,0,1728,288,191,0,"t_surface_1_c,t_surface_2_c,t_surface_3_c,t_surface_4_c,t_surface_5_c,t_surface_6_c,ir_net_w_m2",True
 2025-11-28,RCE,ok,288,100.0,0,0,0,0,0,0,0,0,301,0,,True
 2025-11-28,RCE-a,ok,288,100.0,0,0,0,0,0,0,288,0,301,0,solar_global_w_m2,True

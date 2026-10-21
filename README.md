@@ -1,4 +1,4 @@
-# RCE experimental dataset — version 0.2.3
+# RCE experimental dataset — version 0.2.4
 
 
 
@@ -102,11 +102,11 @@ Variable meanings and units: `docs/data_dictionary.csv`. New to the device? Star
 - The infrared radiation sign/scale differs by period; see `quality/known_issues.md` #5.
 - `flow_period` says when water circulated, not whether the panel was heating or cooling (valve and cover states were not recorded).
 - The heat-transfer fluid is water-glycol 30 %, not water.
-- Experiment types are assigned only where the laboratory diary or the energy paper gives evidence.
+- Experiment types are assigned only where the laboratory's analysis of the 2023–2024 night tests (which takes precedence) or the laboratory diary gives evidence.
 - Timestamps: `ts_local` is Europe/Madrid local time as recorded; `ts_utc` is derived.
 
 ## Citation
-See `CITATION.cff`. DOI: [https://doi.org/10.5281/zenodo.23458309](https://doi.org/10.5281/zenodo.23458309).
+See `CITATION.cff`. DOI: [https://doi.org/10.5281/zenodo.23529834](https://doi.org/10.5281/zenodo.23529834).
 
 ## Authors
 Vitor da Silva, Albert Castell, Roger Vila, Boniface Mselle, Cristian Solé, Josep Lluís Lérida, Marc Medrano,

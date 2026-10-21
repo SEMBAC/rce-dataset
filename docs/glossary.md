@@ -30,10 +30,12 @@ project files allow; the missing detail is not stated in them.
 - **Surface probes T3_1…T3_6**: six temperature probes on the panel surface; T3_3 is at the outlet (coldest point). Exact positions on the panel: [not documented]
 - **Circuit probes T1, T2, T4, T5, T7, T8, T10, T11**: temperatures at points of the hydraulic circuit (inlets, outlets, exchanger); T2 and T4 are the inlet and outlet of the RCE panel; the mapping of each other number to a physical point follows the piping drawings. [not documented]
 - **Cold-tank stratification probes T9_1..T9_3**: three probes at different heights inside the cold tank (warmer water stays on top); probe heights: [not documented]
-- **Flowmeter** (*cabalímetre*, tag `CauQ1`; 2019: `FLOW_RC`, `FLOW_COL`): Schmidt Mess SDNC 503, ±4 %, litres per minute.
+- **Flowmeter** (*cabalímetre*, tag `CauQ1`; 2019: `FLOW_RC`, `FLOW_COL`): Schmidt Mess SDNC 503, ±4 %, litres per minute. In 2019 the panel had two loops that alternated, each with its own
+  flowmeter: `FLOW_COL` by day (panel to hot tank) and `FLOW_RC` by night (panel to cold tank); from 2022 a single
+  flowmeter measures the panel flow in both modes.
 - **Pressure transmitters** (tags `PresPT1`, `PresPT2`): circuit pressure in bar, typically 2–2.5 bar according to the diary.
-- **Pyranometer / solarimeter** (*solarímetre*, tag `IO_SENSOR1_DATA`; 2019: `SOLARIM`): measures global solar irradiance in W/m² (variable `solar_global_w_m2`); whether it is mounted horizontally or in the panel plane is not stated in the project files. Faulty on several periods, including parts of 2025 (`quality/known_issues.md` #4). [not documented]
-- **Pyrgeometer** (*pirgeòmetre*, LP PIRG 01 DeltaOhm, ±5 %): measures infrared (longwave) radiation exchanged with the sky; "net" means received minus emitted. There is a single pyrgeometer, on unit A; the two units stand side by side, so its values apply to both, and the unit-B pyrgeometer tags (`_RCEb`) are not a measurement. The sign convention and the unit differ between years in the files; values are given as recorded.
+- **Pyranometer / solarimeter** (*solarímetre*, tag `IO_SENSOR1_DATA`; 2019: `SOLARIM`): Kipp & Zonen SMP6-A, installed in 2017 and calibrated in 2020, mounted horizontally: it measures global horizontal irradiance in W/m² (variable `solar_global_w_m2`). Faulty on several periods, including parts of 2025 (`quality/known_issues.md` #4).
+- **Pyrgeometer** (*pirgeòmetre*, LP PIRG 01 DeltaOhm, ±5 %): measures infrared (longwave) radiation exchanged with the sky; "net" means received minus emitted. There is a single pyrgeometer, on unit A; the two units stand side by side, so its values apply to both, and the unit-B pyrgeometer tags (`_RCEb`) are not a measurement. `ir_net_w_m2` is the net value: downwelling atmospheric longwave minus the emission of the sensor body, so negative values mean a net loss to the sky (radiative cooling potential); `ir_down_w_m2` (2024–2025) is the downwelling atmospheric longwave itself, typically 200–450 W/m², and `t_pyrgeometer_c` the temperature of the sensor body. In 2022–2024 only a raw signal of undocumented scale was exported (`ir_raw_signal`).
 - **Weather station** (tags `TempExt`, `HumExt`, `VelVent`; 2019: `T_EXT`, `HR_EXT`): outdoor air temperature, relative humidity and wind speed.
 
 ## 4. How the data were recorded
@@ -50,8 +52,8 @@ project files allow; the missing detail is not stated in them.
 
 ## 5. The experiments
 - **Experiment type 1 – no control of the initial temperature**: the water starts at whatever temperature it has and drifts freely.
-- **Experiment type 2 – fixed inlet temperature**: the temperature of the water entering the RCE is held constant.
-- **Experiment type 3 – constant tank temperature**: the tank is kept at a set temperature while the RCE works (heater or heat pump compensate).
+- **Experiment type 2 – fixed initial temperature**: the tank starts at a set temperature and then evolves freely.
+- **Experiment type 3 – constant tank temperature**: the initial temperature is fixed and maintained during the whole test (heater or heat pump compensate).
 - **Experiment type 4 – stagnant water**: pump off, valves closed; the water inside the panel is left still and its temperature change is measured ("tanquem aixetes i bomba", diary 2024-10-01).
 - **Operated day** (*dia útil*): a day with flow > 0 at some moment; days without flow are "idle" (`operated` in `labels/days.csv`).
 - **Campaign**: a set of test days; the 2019–2020 campaigns (dates and flows) are listed in `experiment_types.md` and, per day, in `campaign_evidence` of `labels/days.csv`.
@@ -71,6 +73,6 @@ project files allow; the missing detail is not stated in them.
 - **HTF**: heat-transfer fluid.
 - **SH / RC**: solar heating / radiative cooling.
 - **RTD**: resistance temperature detector (the Pt-100 probes).
-- **GHI / GTI**: global horizontal / global tilted irradiance; which one the solarimeter measures here is not documented (see `solar_global_w_m2`).
+- **GHI / GTI**: global horizontal / global tilted irradiance; the solarimeter here is mounted horizontally and measures GHI (see `solar_global_w_m2`).
 - **IR**: infrared (longwave) radiation.
 - **TMY**: typical meteorological year (a synthetic year used in building simulation; not part of this dataset).
